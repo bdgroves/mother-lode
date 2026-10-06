@@ -12,3 +12,14 @@ places:
       Gold was found here on March 27, 1850, and Columbia became one of the
       richest camps of the Gold Rush. The diggings around the town were
       worked down to bedrock.
+  harvard-pit:
+    name: Harvard Pit, Jamestown Mine
+    center: [37.9463, -120.4377]   # MRDS dep_id 10077946, Harvard Mine Group
+    size_m: [2600, 2200]
+    res: 1.0
+    crs: "EPSG:26910"
+    project: [CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011]
+    blurb: >
+      Sonora Mining Corporation dug the Harvard open pit at Jamestown from
+      1986 to 1994: about 830 m long, 460 m wide and 185 m deep (USGS OF
+      01-074). Since closure it has been filling with water.

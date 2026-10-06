@@ -12,7 +12,7 @@ data/mines/{usmin,mrds}.geojson and a summary to data/mines/summary.json.
 """
 from __future__ import annotations
 
-import io, json, re, sys, zipfile
+import collections, io, json, re, sys, zipfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -60,24 +60,40 @@ def wfs_geojson(svc, typename):
     p = {"service": "WFS", "version": "1.1.0", "request": "GetFeature", "typeName": typename,
          "srsName": "EPSG:4326", "bbox": f"{S},{W},{N},{E},EPSG:4326"}
     r = requests.get(base, params=p, headers=UA, timeout=300)
-    (OUT / f"_{svc}_raw.gml").write_text(r.text[:2_000_000])
+    (OUT / f"_{svc}_{typename}_raw.gml").write_text(r.text[:1_000_000])
     feats = []
     root = ET.fromstring(r.content)
+
+    def lonlat(a, b):  # GML 3 with EPSG:4326 gives lat lon; be tolerant
+        return (b, a) if abs(a) < 90 and abs(b) > 90 else (a, b)
+
+    def ring(text):
+        v = [float(x) for x in text.replace(",", " ").split()]
+        return [lonlat(v[i], v[i + 1]) for i in range(0, len(v) - 1, 2)]
+
     for m in root.iter():
-        if not m.tag.endswith("featureMember"):
+        if not m.tag.split("}")[-1] in ("featureMember", "member"):
             continue
         for f in m:
-            props, xy = {}, None
+            props, xy, rings = {}, None, []
             for el in f.iter():
                 tag = el.tag.split("}")[-1]
                 if tag == "pos" and el.text:
                     a, b = map(float, el.text.split()[:2])
-                    xy = (b, a) if abs(a) < 90 and abs(b) > 90 else (a, b)  # lat/lon order varies
-                elif len(el) == 0 and el.text and el.text.strip() and tag not in ("pos", "coordinates"):
+                    xy = lonlat(a, b)
+                elif tag in ("posList", "coordinates") and el.text:
+                    rings.append(ring(el.text))
+                elif len(el) == 0 and el.text and el.text.strip() and tag not in ("lowerCorner", "upperCorner"):
                     props[tag] = el.text.strip()
-            if xy:
-                feats.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": list(xy)}, "properties": props})
-    log(f"  {svc}/{typename} as GML: {len(feats)} point features")
+            if rings and len(rings[0]) >= 4:
+                geom = {"type": "Polygon", "coordinates": [[list(p) for p in rings[0]]] + [[list(p) for p in r_] for r_ in rings[1:] if len(r_) >= 4]}
+            elif xy:
+                geom = {"type": "Point", "coordinates": list(xy)}
+            else:
+                continue
+            feats.append({"type": "Feature", "geometry": geom, "properties": props})
+    kinds = collections.Counter(f["geometry"]["type"] for f in feats)
+    log(f"  {svc}/{typename} as GML: {dict(kinds)} ({len(r.content):,} bytes)")
     return feats
 
 
