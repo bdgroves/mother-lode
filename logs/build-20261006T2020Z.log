@@ -1,0 +1,9 @@
+✨ Pixi task (ml): python -m motherlode.cli build harvard-pit
+  EPT CA_SierraNevada_12_B22: 80,477,047,491 points in the project
+(PDAL Error) Can't load library /home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_hdf.so: Failed to load "/home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_hdf.so": libhdf5_cpp.so.320: cannot open shared object file: No such file or directory(PDAL Error) Can't load library /home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_icebridge.so: Failed to load "/home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_icebridge.so": libhdf5_cpp.so.320: cannot open shared object file: No such file or directory(PDAL Error) Can't load library /home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_hdf.so: Failed to load "/home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_hdf.so": libhdf5_cpp.so.320: cannot open shared object file: No such file or directory(PDAL Error) Can't load library /home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_icebridge.so: Failed to load "/home/runner/work/mother-lode/mother-lode/.pixi/envs/default/lib/libpdal_plugin_reader_icebridge.so": libhdf5_cpp.so.320: cannot open shared object file: No such file or directory  CA_SierraNevada_12_B22: 40,407,579 ground returns in the window
+  EPT CA_CalaverasTuolumne_2011: 16,524,444,596 points in the project
+  CA_CalaverasTuolumne_2011: 13,105,744 ground returns in the window
+  CA_CalaverasTuolumne_2011: median offset to CA_SierraNevada_12_B22 over 5,465,882 shared cells: -0.038 m
+  CA_CalaverasTuolumne_2011: filled 0.6% of the window
+  DTM 2600 x 2200 at 1.0 m, 97.1% with ground returns
+  done in 282 s -> docs/sites/harvard-pit

@@ -1,0 +1,60 @@
+{
+ "id": "harvard-pit",
+ "name": "Harvard Pit, Jamestown Mine",
+ "blurb": "Sonora Mining Corporation dug the Harvard open pit at Jamestown from 1986 to 1994: about 830 m long, 460 m wide and 185 m deep (USGS OF 01-074). Since closure it has been filling with water.",
+ "center": [
+  37.9463,
+  -120.4377
+ ],
+ "res_m": 1.0,
+ "crs": "EPSG:26910",
+ "size_m": [
+  2600,
+  2200
+ ],
+ "source": "USGS 3DEP point cloud (EPT on AWS)",
+ "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+ "ground_points": 53513323,
+ "seam_shift_m": {
+  "CA_CalaverasTuolumne_2011": -0.038
+ },
+ "ground_density": 9.36,
+ "coverage": 0.9712,
+ "elev_m": [
+  393.4,
+  569.8
+ ],
+ "bounds": [
+  [
+   37.93607511976231,
+   -120.45282835533607
+  ],
+  [
+   37.956524298898074,
+   -120.4225729495546
+  ]
+ ],
+ "layers": {
+  "composite": {
+   "file": "composite.webp",
+   "label": "Relief composite (after VAT)"
+  },
+  "multi_hillshade": {
+   "file": "multi_hillshade.webp",
+   "label": "Hillshade, 16 directions"
+  },
+  "lrm": {
+   "file": "lrm.webp",
+   "label": "Local relief, ±3.15 m"
+  },
+  "svf": {
+   "file": "svf.webp",
+   "label": "Sky-view factor"
+  },
+  "neg_openness": {
+   "file": "neg_openness.webp",
+   "label": "Negative openness"
+  }
+ },
+ "lrm_clip_m": 3.15
+}
