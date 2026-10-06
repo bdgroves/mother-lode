@@ -17,23 +17,24 @@ places:
         Gold was found at Columbia on March 27, 1850. The gold lay in the
         surface gravels, but there was little water to wash them with, so
         miners built a network of aqueducts to bring it in, at a cost of more
-        than a million dollars. Between 1850 and the early 1900s about
+        than a million dollars. Between 1850 and the early 1900s at least
         $87 million in gold came out of the surrounding hills.
       - >
-        Water cannons washed the gravel off the bedrock, and the bedrock here
-        is limestone. Limestone dissolves into knobs, pinnacles and deep
-        slots, and the gold settled in between. When the gravel was gone the
-        pinnacles were left standing: the "rock gardens" that visitors walk
-        among today.
+        The bedrock here is limestone, and limestone dissolves into knobs,
+        pinnacles and deep potholes. The potholes held enormously rich gravel.
+        Miners dug it out of the crevices and then washed the rest away with
+        water cannons, and the pinnacles were left standing: the "rock
+        gardens" that visitors walk among today.
       - >
         In the lidar they are the rough, dark ground running south and east
-        of the old town. The water-filled pit east of them is the Bell
-        Columbia Marble Quarry, still listed as a producer. The long flat
-        strip on the west side is Columbia Airport's runway.
+        of the old town. The water-filled pit east of them is an old quarry
+        in the same limestone; marble has long been quarried around Columbia.
+        The long flat strip on the west side is Columbia Airport's runway.
     sources:
       - {name: "Columbia State Historic Park (Wikipedia)", url: "https://en.wikipedia.org/wiki/Columbia_State_Historic_Park"}
       - {name: "Columbia, California (Wikipedia)", url: "https://en.wikipedia.org/wiki/Columbia,_California"}
-      - {name: "Bell Columbia Marble Quarry (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10111234"}
+      - {name: "Columbia State Historic Park brochure (California State Parks)", url: "https://www.parks.ca.gov/pages/552/files/ColumbiaSHPFinalWeb2015.pdf"}
+      - {name: "Columbia district (Oakland Museum of California)", url: "https://explore.museumca.org/goldrush/dist-columbia.html"}
       - {name: "Bedrock geology (Macrostrat)", url: "https://macrostrat.org/map/#/z=14/x=-120.401/y=38.036"}
   harvard-pit:
     name: Harvard Pit, Jamestown Mine
@@ -49,14 +50,15 @@ places:
     story:
       - >
         The Harvard is the modern end of Mother Lode mining. Underground
-        mines worked these quartz veins in the old days; from 1986 to 1994
-        Sonora Mining Corporation dug them out from the top instead, in an
-        open pit about 830 m long, 460 m wide and 185 m deep.
+        mines followed the gold here in the old days; from 1986 to 1994
+        Sonora Mining Corporation dug out the gold-bearing rock along the
+        Melones fault from the top instead, in an open pit about 830 m long,
+        460 m wide and 185 m deep.
       - >
         When mining ended, the pit began to fill. By November 2000 the
-        lake was about 92 m deep, and the USGS found 720 to 1,100 parts per
-        billion of arsenic in its water. Evaporators now sit in the pit to
-        keep the level down.
+        lake was about 90 m (300 ft) deep. In 1998 and 1999 the USGS measured
+        720 to 1,100 parts per billion of arsenic in its water. Eleven
+        evaporators now sit in the pit to keep the level down.
       - >
         In the lidar the lake is a hole: laser light doesn't come back from
         water. North of it the waste rock stands in stepped dumps cut by

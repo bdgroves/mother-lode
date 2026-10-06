@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mother Lode — gold country in lidar</title>
-<meta name="description" content="Tuolumne County's gold country in bare-earth lidar, with every mine, shaft and tailings pile from the old USGS topo maps.">
+<meta name="description" content="Tuolumne County's gold country in bare-earth lidar, with thousands of mines, shafts and tailings piles from the old USGS topo maps.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@ footer{border-top:2px solid var(--ink);margin-top:40px;padding:16px 0 40px;font-
 <header class="wrap">
   <div class="kicker">Tuolumne County, California · bare-earth lidar · USGS mine maps</div>
   <h1>Mother <em>Lode</em></h1>
-  <p class="dek">The gold country I grew up in, with the trees and buildings stripped away. Lidar shows the ground the miners left behind, and the old USGS topo maps mark every shaft, adit, prospect pit and tailings pile they dug.</p>
+  <p class="dek">The gold country I grew up in, with the trees and buildings stripped away. Lidar shows the ground the miners left behind, and the old USGS topo maps mark thousands of the shafts, adits, prospect pits and tailings piles they dug.</p>
   <div class="facts" id="facts"></div>
 </header>
 
@@ -76,8 +76,8 @@ footer{border-top:2px solid var(--ink);margin-top:40px;padding:16px 0 40px;font-
 
 <section class="read">
   <h2>What the Mother Lode is</h2>
-  <p>The Mother Lode is a line of hard-rock gold deposits about 190 km long and 1.5 to 6 km wide, running along the western foothills of the Sierra Nevada. It follows the Melones Fault Zone, the seam where an old volcanic island arc was jammed onto North America in the Jurassic. Gold-bearing quartz veins formed along that seam, some of them 15 m thick.</p>
-  <p>Miners came at the gold three ways, one after another: panning and sluicing the surface gravels from 1848, washing whole hillsides down with water cannons from the 1850s, and following the quartz veins underground from the 1860s on. Columbia is the second kind. The Harvard pit at Jamestown is the modern version of the third, dug from the top instead of tunnelled.</p>
+  <p>The Mother Lode is a line of hard-rock gold deposits about 190 km long and 1.5 to 6 km wide, running along the western foothills of the Sierra Nevada. It follows the Melones Fault Zone, the seam where an old volcanic island arc was jammed onto North America in the Jurassic. Later, in the Early Cretaceous, gold-bearing quartz veins formed along that seam, some of them 15 m thick.</p>
+  <p>Miners came at the gold three ways, one after another: panning and sluicing the surface gravels from 1848, washing whole hillsides down with water cannons from the 1850s, and following the quartz veins underground from the 1860s on. Columbia is the first two kinds. The Harvard pit at Jamestown is the modern version of the third, dug from the top instead of tunnelled.</p>
   <h3>How to read the map</h3>
   <p><b>Relief composite</b> is the all-purpose view: lit from every direction at once, so no slope hides in shadow. <b>Local relief</b> subtracts the big landforms and keeps the small ones, warm for bumps and blue for hollows. Dumps and pits stand out there. <b>Sky-view</b> is darker wherever the ground is enclosed: pits, ditches and the slots between limestone pinnacles.</p>
   <p class="note">The mine symbols come from USGS topographic maps, most of them drawn decades ago. A symbol marks what a surveyor saw then. Some of these features are gone, and many sit on private land. Please look from the road or the trail.</p>
@@ -184,7 +184,7 @@ function controls(p) {
 function side(p) {
   if (!p) {
     $("#side").innerHTML = `<h2>Gold country</h2>
-      <p>Every point here is a hole someone dug: the shafts, adits and prospect pits drawn on USGS topographic maps, plus the tailings and dumps they outlined. They crowd into the western foothills: along the Mother Lode veins at Chinese Camp and Jamestown, and in the old gravel camps of Big Oak Flat, Sonora and Columbia.</p>
+      <p>Nearly every point here is a hole someone dug: the shafts, adits and prospect pits drawn on USGS topographic maps, plus the tailings and dumps they outlined. They crowd into the western foothills: along the Mother Lode veins at Jamestown, and in the old gravel camps of Chinese Camp, Big Oak Flat, Sonora and Columbia.</p>
       <p>Pick a place above to see the ground itself in lidar.</p>${controls(null)}`;
   } else {
     const L_ = p.lidar;
