@@ -81,6 +81,7 @@ def build(sid, refetch):
     info = {"id": sid, "name": site["name"], "blurb": " ".join(site.get("blurb", "").split()),
             "center": site["center"], "res_m": site["res"], "crs": site["crs"], "size_m": site["size_m"],
             "source": prov["source"], "project": prov["project"], "ground_points": prov["ground_points"],
+            "seam_shift_m": prov.get("seam_shift_m", {}),
             "ground_density": round(prov["ground_points"] / area, 2), "coverage": round(cover, 4),
             "elev_m": [round(float(zf.min()), 1), round(float(zf.max()), 1)], **meta}
     web.write_json(info, out / "site.json")

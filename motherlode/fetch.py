@@ -71,22 +71,66 @@ def run(pipeline) -> int:
     return p.execute()
 
 
-def fetch_ept(site, out_tif: Path, log=print) -> dict:
+def _ept_grid(project, site, out_tif: Path, log=print) -> int:
     bounds = utm_bounds(site)
     w, s, e, n = lonlat_bounds(site)
     t = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
     mx0, my0 = t.transform(w, s)
     mx1, my1 = t.transform(e, n)
-    meta = requests.get(EPT.format(project=site["project"]), timeout=60).json()
-    log(f"  EPT {site['project']}: {meta['points']:,} points in the project")
-    pipe = [{"type": "readers.ept", "filename": EPT.format(project=site["project"]),
+    meta = requests.get(EPT.format(project=project), timeout=60).json()
+    log(f"  EPT {project}: {meta['points']:,} points in the project")
+    pipe = [{"type": "readers.ept", "filename": EPT.format(project=project),
              "bounds": f"([{mx0},{mx1}],[{my0},{my1}])", "threads": 8}]
     pipe += _ground_stages(site["crs"], bounds)
     pipe += [_grid_stage(out_tif, bounds, site["res"])]
     n_ground = run(pipe)
-    log(f"  {n_ground:,} ground returns in the window")
-    return {"source": "USGS 3DEP point cloud (EPT on AWS)", "project": site["project"],
-            "ground_points": int(n_ground)}
+    log(f"  {project}: {n_ground:,} ground returns in the window")
+    return int(n_ground)
+
+
+def fetch_ept(site, out_tif: Path, log=print) -> dict:
+    """Grid each project in `project` (a name or a list, best first) and fill
+    the first one's gaps from the next. Survey edges run through some windows:
+    Columbia sits on the edge of the 2022 Sierra Nevada flight, and the 2011
+    Calaveras-Tuolumne survey covers the rest.
+
+    Where two surveys overlap, the later one is shifted by the median height
+    difference in the overlap so the seam doesn't show; the shift is logged
+    and kept in the provenance (it should be centimetres if both are NAVD88)."""
+    projects = site["project"] if isinstance(site["project"], list) else [site["project"]]
+    z = cnt = prof = None
+    used, total, shifts = [], 0, {}
+    for k, proj in enumerate(projects):
+        part = out_tif.with_name(f"{out_tif.stem}_{k}.tif")
+        n = _ept_grid(proj, site, part, log)
+        if n == 0:
+            continue
+        with rasterio.open(part) as src:
+            zi, ci, prof = src.read(1), src.read(2), src.profile
+        zi = np.where((zi == -9999) | (ci <= 0), np.nan, zi)
+        if z is None:
+            z, cnt = zi, np.where(np.isfinite(zi), ci, 0)
+        else:
+            both = np.isfinite(z) & np.isfinite(zi)
+            dz = float(np.median(z[both] - zi[both])) if both.sum() > 1000 else 0.0
+            shifts[proj] = round(dz, 3)
+            log(f"  {proj}: median offset to {used[0]} over {int(both.sum()):,} shared cells: {dz:+.3f} m")
+            hole = ~np.isfinite(z) & np.isfinite(zi)
+            z[hole] = zi[hole] + dz
+            cnt[hole] = ci[hole]
+            log(f"  {proj}: filled {hole.mean():.1%} of the window")
+        used.append(proj)
+        total += n
+        if np.isfinite(z).mean() > 0.995:
+            break
+    if z is None:
+        raise SystemExit("no ground returns from any project")
+    prof.update(count=2)
+    with rasterio.open(out_tif, "w", **prof) as d:
+        d.write(np.where(np.isfinite(z), z, -9999).astype("float32"), 1)
+        d.write(cnt.astype("float32"), 2)
+    return {"source": "USGS 3DEP point cloud (EPT on AWS)", "project": ", ".join(used),
+            "ground_points": total, "seam_shift_m": shifts}
 
 
 def read_dtm(tif: Path, max_gap_m: float = 3.0):

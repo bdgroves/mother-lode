@@ -7,7 +7,7 @@ places:
     size_m: [3000, 2400]
     res: 1.0
     crs: "EPSG:26910"
-    project: CA_SierraNevada_12_B22
+    project: [CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011]   # 2022 first; 2011 fills the west side
     blurb: >
       Gold was found here on March 27, 1850, and Columbia became one of the
       richest camps of the Gold Rush. The diggings around the town were
