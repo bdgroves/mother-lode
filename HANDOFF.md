@@ -86,52 +86,74 @@ Dispatch from the sandbox:
 - Keep the social bots off (they're on standby; no paid X API).
 - Never publish run tracks near home; never commit secrets.
 
-## To-do list
+## To-do list (updated end of day, Oct 6)
 
-### Mother Lode
+### Mother Lode (start here)
 1. **Geology layer (next up).** Draw the Melones Fault Zone and the rock units
    under the mines, so the gold visibly lines up along the fault. Candidate
    sources: USGS State Geologic Map Compilation (SGMC, ScienceBase, keyless),
    California Geological Survey 1:750k geologic map, Macrostrat (point API works
    from Actions; polygons via its tiles). Fetch on Actions, clip to the county,
    add as a toggle on the map, then a short "what the rocks say" section.
-2. **More places.** Good candidates already in the data: Chinese Camp (placer
-   camp), Jamestown's App mine (App-Heslep, $6.5M per Oakland Museum),
-   Tuttletown / Jackass Hill, Springfield and Shaws Flat near Columbia, Moccasin,
-   and Groveland itself. Add to `places.yaml` with checked coordinates, build,
-   fact-check the stories, run `web_data.py`, regenerate blog figures if used.
+2. **More places.** Chinese Camp (placer camp), Jamestown's App mine
+   (App-Heslep, $6.5M per Oakland Museum), Tuttletown / Jackass Hill,
+   Springfield and Shaws Flat near Columbia, Moccasin, and Groveland itself.
+   Add to `places.yaml` with checked coordinates, build, fact-check the
+   stories, run `web_data.py`, regenerate blog figures if used.
 3. **forge3d flyover** of Columbia's pinnacles or along Table Mountain (Kiva's
    renderer already works on this pipeline; tag @milos_gis only for forge3d).
 4. **Iron staining from space** (ties to Brooks's 1990s mineral-bioprocessing
-   work): Sentinel-2 iron-oxide index over old mines and tailings; acid mine
-   drainage is microbes at work, the same chemistry as bioleaching.
-5. Settle Big Oak Flat's date: the landmark marker says gold found 1848; the
-   Tuolumne County Historical Society says Savage founded the towns in 1849.
-   The post follows the marker. Brooks may know.
+   work): Sentinel-2 iron-oxide index over old mines and tailings.
+5. Settle Big Oak Flat's date: marker says gold found 1848; the Tuolumne County
+   Historical Society says Savage founded the towns in 1849. Post follows the
+   marker. Ask Brooks.
 
-### Site-wide (brooksgroves.com)
-6. Meteorology page and homepage still describe the alert and weather-report
-   bots as posting live. They're on standby: add an "on standby" note if Brooks
-   says yes.
-7. Stern's Music (Afropop curriculum page) didn't answer the link check; check
-   in a browser and drop the link if the shop is gone.
-8. Little Free Pantry: confirm the live page shows the new Esri map, then Brooks
-   can re-archive the repo.
-9. The site's link checker is in `bdgroves.github.io/tools/linkcheck/` with a
-   manual workflow `link-check.yml`; the report lands on the `link-report` branch.
-   Most 403s are publishers blocking bots and work in a browser.
+### Site (brooksgroves.com)
+6. Rainier Snowpack and Wildfire Response Gaps are the only projects with no
+   blog post yet — story ideas.
+7. Link checker: `bdgroves.github.io/tools/linkcheck/`, manual workflow
+   `link-check.yml`, report on the `link-report` branch. Run it again after
+   today's changes.
+8. **Parked for later (Brooks's call):** central CSS / one shared menu for the
+   site. He likes the current look; the work is plumbing only (one
+   `/css/site.css`, a script that stamps one nav into every page, a shared
+   stylesheet for the project link bar). Don't start without him.
+9. **Parked:** BdgrovesBot (Wikipedia bot), another day.
 
 ### Bigger ideas Brooks raised
-10. **Nevada / UNR:** the Nevada Bureau of Mines and Geology (at UNR) publishes
-    geologic maps, mining districts and mineral data openly
-    (https://data-nbmg.opendata.arcgis.com/). A Nevada sequel: the Comstock,
-    Peavine, or the lithium boom.
+10. **Nevada / UNR:** Nevada Bureau of Mines and Geology open data
+    (https://data-nbmg.opendata.arcgis.com/) — the Comstock, Peavine, or the
+    lithium boom.
 11. **Mineral bioprocessing:** a warm "what happened to the field I worked in"
-    post first (bioleaching is back for critical minerals and mine-waste
-    recycling), then maybe the Sentinel-2 iron-staining piece above.
-12. **Meteorology:** the WA smoke follow-up already on Brooks's list (HRRR-Smoke
-    vs ground PM2.5 monitors over the 2026 fire weeks) would give that page a
-    project that isn't a bot.
+    post (bioleaching is back for critical minerals and mine-waste recycling).
+12. **Meteorology:** WA smoke follow-up, HRRR-Smoke vs ground PM2.5 monitors
+    over the 2026 fire weeks — a Meteorology project that isn't a bot.
+
+## Done in the second half of Oct 6 (so nobody redoes it)
+
+- **Bots off the spotlight.** Sierra Alert Bot left the homepage hero, the
+  Projects menu's Featured list and the Meteorology card row; both menus have a
+  small "Bots" section (BdgrovesBot marked parked). meteorology.html now leads
+  with FOG-WATCH, then Weather Station and CASCADIA-WX; weather-report-bot and
+  the alert bot sit in an "On Standby" section, past tense, linking
+  `blog/alert-bots-revisited-post.html`.
+- **Homepage hero** rotates Mother Lode (also the no-JS default), Project Kiva,
+  SOLSTICE, FOG-WATCH, PELE, AFTERSHOCK, Rainier Snowpack, HopLove, secchi.
+  PaleoWave/IceWave stay on Paleontology.
+- **"The Work"** gained Geology (Mother Lode, AFTERSHOCK) and Archaeology (Kiva,
+  SOLSTICE) groups; Paleontology got its Explore link.
+- **Ology pages:** Geology AFTERSHOCK stat = hourly + live feed every 2 min;
+  Ecology leads with Pyramid Lake, other blocks have topic labels; Volcanology's
+  Active Projects = PELE + lahar-watch (AFTERSHOCK/Rainier under "Next Door");
+  Hydrology keeps streamchaser as lead with a "Watch the Rivers Live" link to
+  Sierra Streamflow; GISP stat reads as passed; "Projects" nav fixed on three
+  pages; Stern's Music link dropped (site dead); assorted links and blurbs.
+- **Every project page has a way home.** Link bar (← brooksgroves.com · The
+  story · ology · Code) added to fog-watch, cascadia-wx, dipodomys,
+  puget-tides, rainier-snowpack, wildfire-response-gaps, weather-report-bot,
+  project-ice-wave, project-paleowave, little-free-pantry (Brooks applied that
+  patch himself; he may re-archive it). HopLove's header gained "The story".
+  The rest already had home/story/code links.
 
 ## Other repos touched this session (all pushed)
 
