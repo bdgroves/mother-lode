@@ -13,12 +13,15 @@
   2400
  ],
  "source": "USGS 3DEP point cloud (EPT on AWS)",
- "project": "CA_SierraNevada_12_B22",
- "ground_points": 14510002,
- "ground_density": 2.02,
- "coverage": 0.3641,
+ "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+ "ground_points": 29572214,
+ "seam_shift_m": {
+  "CA_CalaverasTuolumne_2011": 0.014
+ },
+ "ground_density": 4.11,
+ "coverage": 0.9954,
  "elev_m": [
-  639.9,
+  623.8,
   778.9
  ],
  "bounds": [
@@ -42,7 +45,7 @@
   },
   "lrm": {
    "file": "lrm.webp",
-   "label": "Local relief, ±3.39 m"
+   "label": "Local relief, ±2.79 m"
   },
   "svf": {
    "file": "svf.webp",
@@ -53,5 +56,5 @@
    "label": "Negative openness"
   }
  },
- "lrm_clip_m": 3.39
+ "lrm_clip_m": 2.79
 }
