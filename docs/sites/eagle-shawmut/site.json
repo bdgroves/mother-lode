@@ -1,0 +1,60 @@
+{
+ "id": "eagle-shawmut",
+ "name": "Eagle-Shawmut Mine",
+ "blurb": "",
+ "center": [
+  37.8669,
+  -120.3956
+ ],
+ "res_m": 1.0,
+ "crs": "EPSG:26910",
+ "size_m": [
+  2600,
+  2200
+ ],
+ "source": "USGS 3DEP point cloud (EPT on AWS)",
+ "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+ "ground_points": 47075421,
+ "seam_shift_m": {
+  "CA_CalaverasTuolumne_2011": 0.011
+ },
+ "ground_density": 8.23,
+ "coverage": 0.8853,
+ "elev_m": [
+  235.3,
+  512.9
+ ],
+ "bounds": [
+  [
+   37.856670586711694,
+   -120.41071831223285
+  ],
+  [
+   37.87712948373435,
+   -120.38049586626377
+  ]
+ ],
+ "layers": {
+  "composite": {
+   "file": "composite.webp",
+   "label": "Relief composite (after VAT)"
+  },
+  "multi_hillshade": {
+   "file": "multi_hillshade.webp",
+   "label": "Hillshade, 16 directions"
+  },
+  "lrm": {
+   "file": "lrm.webp",
+   "label": "Local relief, ±3.68 m"
+  },
+  "svf": {
+   "file": "svf.webp",
+   "label": "Sky-view factor"
+  },
+  "neg_openness": {
+   "file": "neg_openness.webp",
+   "label": "Negative openness"
+  }
+ },
+ "lrm_clip_m": 3.68
+}

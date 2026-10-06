@@ -1,0 +1,60 @@
+{
+ "id": "rawhide",
+ "name": "Rawhide Mine",
+ "blurb": "",
+ "center": [
+  37.9613,
+  -120.4457
+ ],
+ "res_m": 1.0,
+ "crs": "EPSG:26910",
+ "size_m": [
+  2200,
+  2000
+ ],
+ "source": "USGS 3DEP point cloud (EPT on AWS)",
+ "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+ "ground_points": 34589145,
+ "seam_shift_m": {
+  "CA_CalaverasTuolumne_2011": -0.023
+ },
+ "ground_density": 7.86,
+ "coverage": 0.9993,
+ "elev_m": [
+  405.3,
+  570.8
+ ],
+ "bounds": [
+  [
+   37.95201987572849,
+   -120.45852834573773
+  ],
+  [
+   37.97057071137539,
+   -120.43289046937078
+  ]
+ ],
+ "layers": {
+  "composite": {
+   "file": "composite.webp",
+   "label": "Relief composite (after VAT)"
+  },
+  "multi_hillshade": {
+   "file": "multi_hillshade.webp",
+   "label": "Hillshade, 16 directions"
+  },
+  "lrm": {
+   "file": "lrm.webp",
+   "label": "Local relief, ±2.94 m"
+  },
+  "svf": {
+   "file": "svf.webp",
+   "label": "Sky-view factor"
+  },
+  "neg_openness": {
+   "file": "neg_openness.webp",
+   "label": "Negative openness"
+  }
+ },
+ "lrm_clip_m": 2.94
+}

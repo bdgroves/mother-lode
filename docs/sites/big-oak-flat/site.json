@@ -1,0 +1,58 @@
+{
+ "id": "big-oak-flat",
+ "name": "Big Oak Flat",
+ "blurb": "",
+ "center": [
+  37.8227,
+  -120.2607
+ ],
+ "res_m": 1.0,
+ "crs": "EPSG:26910",
+ "size_m": [
+  2600,
+  2200
+ ],
+ "source": "USGS 3DEP point cloud (EPT on AWS)",
+ "project": "CA_SierraNevada_12_B22",
+ "ground_points": 29479989,
+ "seam_shift_m": {},
+ "ground_density": 5.15,
+ "coverage": 0.9998,
+ "elev_m": [
+  634.5,
+  1026.4
+ ],
+ "bounds": [
+  [
+   37.81243892311469,
+   -120.27581929406306
+  ],
+  [
+   37.83293965786523,
+   -120.24558257875127
+  ]
+ ],
+ "layers": {
+  "composite": {
+   "file": "composite.webp",
+   "label": "Relief composite (after VAT)"
+  },
+  "multi_hillshade": {
+   "file": "multi_hillshade.webp",
+   "label": "Hillshade, 16 directions"
+  },
+  "lrm": {
+   "file": "lrm.webp",
+   "label": "Local relief, ±3.48 m"
+  },
+  "svf": {
+   "file": "svf.webp",
+   "label": "Sky-view factor"
+  },
+  "neg_openness": {
+   "file": "neg_openness.webp",
+   "label": "Negative openness"
+  }
+ },
+ "lrm_clip_m": 3.48
+}
