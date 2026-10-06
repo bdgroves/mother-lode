@@ -1,6 +1,6 @@
 {
  "usmin": {
-  "features": 1160,
+  "features": 1370,
   "fields": [
    "_layer",
    "compiledby",
@@ -10,64 +10,53 @@
    "ftr_name",
    "ftr_type",
    "gda_id",
-   "lowerCorner",
    "remarks",
    "scanid",
    "state",
    "topo_date",
    "topo_name",
    "topo_scale",
-   "upperCorner",
    "url"
   ],
   "sample": [
    {
-    "lowerCorner": "37.881441 -119.312176",
-    "upperCorner": "37.881441 -119.312176",
     "state": "CA",
     "county": "Tuolumne",
-    "ftr_type": "Borrow Pit",
-    "ftr_azimut": "0",
-    "topo_name": "Tioga Pass",
-    "topo_date": "1990",
-    "topo_scale": "24000",
-    "compiledby": "CA Dept Conserv",
-    "gda_id": "5524659",
-    "scanid": "295476",
-    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=point&id=50514",
-    "_layer": "points"
+    "ftr_type": "Mine Dump",
+    "topo_name": "Tuolumne",
+    "topo_date": "1948",
+    "topo_scale": "62500",
+    "compiledby": "USGS",
+    "gda_id": "5504909",
+    "scanid": "301880",
+    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=polygon&id=143039",
+    "_layer": "polygons"
    },
    {
-    "lowerCorner": "37.854311 -119.216363",
-    "upperCorner": "37.854311 -119.216363",
     "state": "CA",
     "county": "Tuolumne",
-    "ftr_type": "Mine Shaft",
-    "ftr_azimut": "0",
-    "topo_name": "Koip Peak",
-    "topo_date": "1988",
-    "topo_scale": "24000",
-    "compiledby": "CA Dept Conserv",
-    "gda_id": "5516597",
-    "scanid": "291918",
-    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=point&id=58791",
-    "_layer": "points"
+    "ftr_type": "Mine Dump",
+    "topo_name": "Sonora",
+    "topo_date": "1948",
+    "topo_scale": "62500",
+    "compiledby": "USGS",
+    "gda_id": "5958019",
+    "scanid": "301739",
+    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=polygon&id=143078",
+    "_layer": "polygons"
    },
    {
-    "lowerCorner": "37.847082 -119.217825",
-    "upperCorner": "37.847082 -119.217825",
     "state": "CA",
     "county": "Tuolumne",
-    "ftr_type": "Mine Shaft",
-    "ftr_azimut": "0",
-    "topo_name": "Koip Peak",
-    "topo_date": "1988",
-    "topo_scale": "24000",
-    "compiledby": "CA Dept Conserv",
-    "gda_id": "5516597",
-    "scanid": "291918",
-    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=point&id=58795",
-    "_layer": "points"
+    "ftr_type": "Mine Dump",
+    "topo_name": "Sonora",
+    "topo_date": "1948",
+    "topo_scale": "62500",
+    "compiledby": "USGS",
+    "gda_id": "5958019",
+    "scanid": "301739",
+    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=polygon&id=143196",
+    "_layer": "polygons"
    }
   ]
  },
@@ -80,16 +69,12 @@
    "dev_stat",
    "fips_code",
    "huc_code",
-   "lowerCorner",
    "quad_code",
    "site_name",
-   "upperCorner",
    "url"
   ],
   "sample": [
    {
-    "lowerCorner": "37.824120 -120.036790",
-    "upperCorner": "37.824120 -120.036790",
     "dep_id": "10141759",
     "site_name": "Gravel Range",
     "dev_stat": "Prospect",
@@ -101,8 +86,6 @@
     "_layer": "mrds"
    },
    {
-    "lowerCorner": "38.002720 -120.054290",
-    "upperCorner": "38.002720 -120.054290",
     "dep_id": "10165596",
     "site_name": "North Fork No. 1",
     "dev_stat": "Unknown",
@@ -114,8 +97,6 @@
     "_layer": "mrds"
    },
    {
-    "lowerCorner": "37.864620 -119.991790",
-    "upperCorner": "37.864620 -119.991790",
     "dep_id": "10214645",
     "site_name": "Quarry",
     "dev_stat": "Unknown",
@@ -133,17 +114,17 @@
   "  usmin/polygons as geojson: 200 JSONDecodeError",
   "  usmin/polygons as application/json: 200 JSONDecodeError",
   "  usmin/polygons as json: 200 JSONDecodeError",
-  "  usmin/polygons as GML: 0 point features",
+  "  usmin/polygons as GML: {'Polygon': 303} (915,321 bytes)",
   "  usmin/points as geojson: 200 JSONDecodeError",
   "  usmin/points as application/json: 200 JSONDecodeError",
   "  usmin/points as json: 200 JSONDecodeError",
-  "  usmin/points as GML: 2732 point features",
-  "usmin: 1160 features inside Tuolumne County",
+  "  usmin/points as GML: {'Point': 2732} (3,108,273 bytes)",
+  "usmin: 1370 features inside Tuolumne County",
   "mrds: feature types ['mrds']; formats ['text/xml; subtype=gml/2.1.2', 'text/xml; subtype=gml/3.1.1']",
   "  mrds/mrds as geojson: 200 JSONDecodeError",
   "  mrds/mrds as application/json: 200 JSONDecodeError",
   "  mrds/mrds as json: 200 JSONDecodeError",
-  "  mrds/mrds as GML: 4083 point features",
+  "  mrds/mrds as GML: {'Point': 4083} (3,743,132 bytes)",
   "mrds: 1305 features inside Tuolumne County"
  ]
 }
