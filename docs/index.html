@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mother Lode — gold country in lidar</title>
+<meta name="description" content="Tuolumne County's gold country in bare-earth lidar, with every mine, shaft and tailings pile from the old USGS topo maps.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4efe3; --paper2:#ebe3d0; --ink:#231d14; --muted:#6e6252; --rule:#cfc3a8;
+  --gold:#b8860b; --gold2:#8a6408; --quartz:#e9e4d8;
+  --adit:#c2410c; --shaft:#1d4ed8; --pit:#ca8a04; --tail:#9a3412; --named:#047857;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink)}
+body{font:17px/1.6 "Source Serif 4",Georgia,serif}
+a{color:var(--gold2)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+header{padding:20px 0 8px;border-bottom:2px solid var(--ink)}
+.kicker{font:500 12px/1.4 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+h1{font:800 clamp(40px,7vw,76px)/1 "Fraunces",Georgia,serif;margin:.15em 0 .1em;letter-spacing:-.02em}
+h1 em{font-style:italic;font-weight:400;color:var(--gold2)}
+.dek{max-width:720px;font-size:19px;color:#3d342a;margin:.4em 0 1em}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:14px 0 6px;padding:12px 0;border-top:1px solid var(--rule)}
+.facts div{min-width:120px}
+.facts b{display:block;font:600 26px/1.1 "Fraunces",serif}
+.facts span{font:12px/1.3 "IBM Plex Mono",monospace;color:var(--muted)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 10px}
+.tabs button{font:500 13px "IBM Plex Mono",monospace;letter-spacing:.04em;padding:8px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px;align-items:start}
+#map{height:640px;border:1px solid var(--ink);background:#ddd6c4}
+.side{border-top:2px solid var(--ink);padding-top:10px}
+.side h2{font:600 30px/1.1 "Fraunces",serif;margin:.1em 0 .3em}
+.side p{margin:.6em 0}
+.side .src{font-size:13px;color:var(--muted)}
+.side .src a{color:var(--muted)}
+.controls{margin:12px 0;padding:10px 12px;background:var(--paper2);border:1px solid var(--rule)}
+.controls label{display:flex;align-items:center;gap:8px;font:13px "IBM Plex Mono",monospace;margin:4px 0;cursor:pointer}
+.controls h3{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:8px 0 4px}
+.controls input[type=range]{width:100%}
+.sw{display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid currentColor}
+.sw.sq{border-radius:1px;background:currentColor}
+.lidar{font:12px/1.5 "IBM Plex Mono",monospace;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:10px}
+section.read{max-width:760px;margin:40px auto 10px;padding:0 16px}
+section.read h2{font:600 32px/1.15 "Fraunces",serif;margin:1.2em 0 .3em}
+section.read h3{font:600 21px/1.2 "Fraunces",serif;margin:1.3em 0 .2em}
+.note{border-left:3px solid var(--gold);padding:4px 0 4px 14px;color:#3d342a}
+footer{border-top:2px solid var(--ink);margin-top:40px;padding:16px 0 40px;font-size:14px;color:var(--muted)}
+.leaflet-popup-content{font:14px/1.45 "Source Serif 4",Georgia,serif}
+.leaflet-popup-content b{font-family:"Fraunces",serif}
+@media (max-width:900px){.stage{grid-template-columns:1fr}#map{height:480px}}
+</style>
+</head>
+<body>
+<nav class="bg-bar" aria-label="brooksgroves.com"><a href="https://brooksgroves.com/">&larr; brooksgroves.com</a><a href="https://brooksgroves.com/geology.html">Geology</a><a href="https://github.com/bdgroves/mother-lode">Code</a></nav><style>.bg-bar{display:flex;flex-wrap:wrap;gap:4px 16px;position:relative;z-index:50;padding:8px 16px 0;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.04em}.bg-bar a{color:inherit;opacity:.65;text-decoration:none}.bg-bar a:hover{opacity:1;text-decoration:underline}</style>
+
+<header class="wrap">
+  <div class="kicker">Tuolumne County, California · bare-earth lidar · USGS mine maps</div>
+  <h1>Mother <em>Lode</em></h1>
+  <p class="dek">The gold country I grew up in, with the trees and buildings stripped away. Lidar shows the ground the miners left behind, and the old USGS topo maps mark every shaft, adit, prospect pit and tailings pile they dug.</p>
+  <div class="facts" id="facts"></div>
+</header>
+
+<main class="wrap">
+  <div class="tabs" id="tabs" role="group" aria-label="Places"></div>
+  <div class="stage">
+    <div id="map" role="region" aria-label="Map"></div>
+    <aside class="side" id="side"></aside>
+  </div>
+</main>
+
+<section class="read">
+  <h2>What the Mother Lode is</h2>
+  <p>The Mother Lode is a line of hard-rock gold deposits about 190 km long and 1.5 to 6 km wide, running along the western foothills of the Sierra Nevada. It follows the Melones Fault Zone, the seam where an old volcanic island arc was jammed onto North America in the Jurassic. Gold-bearing quartz veins formed along that seam, some of them 15 m thick.</p>
+  <p>Miners came at the gold three ways, one after another: panning and sluicing the surface gravels from 1848, washing whole hillsides down with water cannons from the 1850s, and following the quartz veins underground from the 1860s on. Columbia is the second kind. The Harvard pit at Jamestown is the modern version of the third, dug from the top instead of tunnelled.</p>
+  <h3>How to read the map</h3>
+  <p><b>Relief composite</b> is the all-purpose view: lit from every direction at once, so no slope hides in shadow. <b>Local relief</b> subtracts the big landforms and keeps the small ones, warm for bumps and blue for hollows. Dumps and pits stand out there. <b>Sky-view</b> is darker wherever the ground is enclosed: pits, ditches and the slots between limestone pinnacles.</p>
+  <p class="note">The mine symbols come from USGS topographic maps, most of them drawn decades ago. A symbol marks what a surveyor saw then. Some of these features are gone, and many sit on private land. Please look from the road or the trail.</p>
+  <h3>Sources</h3>
+  <p class="src" id="sources">
+    Lidar: <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program</a>, streamed from the <a href="https://registry.opendata.aws/usgs-lidar/">public point-cloud archive on AWS</a> (surveys CA_SierraNevada_12_B22, 2022, and CA_CalaverasTuolumne_2011).
+    Mine features: <a href="https://mrdata.usgs.gov/usmin/">USGS USMIN</a> (prospect- and mine-related features on USGS topographic maps) and the <a href="https://mrdata.usgs.gov/mrds/">USGS Mineral Resources Data System</a>.
+    Geology: <a href="https://en.wikipedia.org/wiki/Mother_Lode">Mother Lode (Wikipedia)</a>, <a href="https://macrostrat.org/">Macrostrat</a>.
+    Relief methods after Hesse (2010), Zakšek et al. (2011), Yokoyama et al. (2002) and Kokalj &amp; Somrak (2019), via <a href="https://brooksgroves.com/project-kiva/">Project Kiva</a>.
+  </p>
+</section>
+
+<footer class="wrap">
+  Built by <a href="https://brooksgroves.com">Brooks Groves</a> · <a href="https://github.com/bdgroves/mother-lode">code on GitHub</a> · Map tiles © Esri
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = t => String(t ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = n => Number(n).toLocaleString("en-US");
+const KIND = {
+  "Adit": {c: "var(--adit)", hex: "#c2410c", label: "Adit (tunnel)"},
+  "Mine Shaft": {c: "var(--shaft)", hex: "#1d4ed8", label: "Shaft"},
+  "Prospect Pit": {c: "var(--pit)", hex: "#ca8a04", label: "Prospect pit"},
+};
+const OTHER_HEX = "#6b7280", TAIL_HEX = "#9a3412", NAMED_HEX = "#047857";
+
+let map, places = [], mines = null, overlay = null, current = null;
+const layerOn = {usminPts: true, usminPoly: true, named: true};
+let relief = "composite", opacity = 0.85;
+const groups = {};
+
+function basemaps() {
+  const esri = (svc, opts = {}) => L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/${svc}/MapServer/tile/{z}/{y}/{x}`,
+    {maxZoom: 19, attribution: "Tiles &copy; Esri", ...opts});
+  const imagery = L.layerGroup([
+    esri("World_Imagery", {attribution: "Tiles &copy; Esri &mdash; Esri, Maxar, Earthstar Geographics, USDA, USGS"}),
+    esri("Reference/World_Boundaries_and_Places", {attribution: ""})]);
+  const topo = esri("World_Topo_Map", {attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, USGS, NPS"});
+  const light = esri("Canvas/World_Light_Gray_Base", {maxNativeZoom: 16, attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors"});
+  return {"Satellite": imagery, "Terrain": topo, "Light": light};
+}
+
+function mineLayers() {
+  const pts = [], polys = [], named = [];
+  for (const f of mines.features) {
+    const p = f.properties, g = f.geometry;
+    if (p.src === "usmin" && g.type === "Polygon") polys.push(f);
+    else if (p.src === "usmin") pts.push(f);
+    else named.push(f);
+  }
+  groups.usminPoly = L.geoJSON({type: "FeatureCollection", features: polys}, {
+    style: {color: TAIL_HEX, weight: 1.5, fillColor: TAIL_HEX, fillOpacity: .25},
+    onEachFeature: (f, l) => l.bindPopup(popUsmin(f.properties))});
+  groups.usminPts = L.geoJSON({type: "FeatureCollection", features: pts}, {
+    pointToLayer: (f, ll) => L.circleMarker(ll, {radius: 5, weight: 2, color: (KIND[f.properties.kind] || {}).hex || OTHER_HEX, fillOpacity: .15}),
+    onEachFeature: (f, l) => l.bindPopup(popUsmin(f.properties))});
+  groups.named = L.geoJSON({type: "FeatureCollection", features: named}, {
+    pointToLayer: (f, ll) => L.marker(ll, {icon: L.divIcon({className: "", iconSize: [10, 10],
+      html: `<div style="width:10px;height:10px;background:${f.properties.gold ? NAMED_HEX : "#64748b"};border:1px solid #fff;transform:rotate(45deg)"></div>`})}),
+    onEachFeature: (f, l) => l.bindPopup(popNamed(f.properties))});
+  for (const k of Object.keys(layerOn)) if (layerOn[k]) groups[k].addTo(map);
+}
+
+function popUsmin(p) {
+  return `<b>${esc(p.kind || "Mine feature")}</b>${p.name ? `<br>${esc(p.name)}` : ""}<br><span class="mono" style="font-size:12px">as drawn on the ${esc(p.topo)} USGS topo map</span>${p.url ? `<br><a href="${esc(p.url)}" target="_blank" rel="noopener">USMIN record</a>` : ""}`;
+}
+function popNamed(p) {
+  return `<b>${esc(p.name)}</b><br>${esc(p.status)}${p.commodities ? ` · ${esc(p.commodities)}` : ""}${p.url ? `<br><a href="${esc(p.url)}" target="_blank" rel="noopener">USGS mineral record</a>` : ""}`;
+}
+
+function facts() {
+  const pts = mines.features.filter(f => f.properties.src === "usmin" && f.geometry.type === "Point");
+  const count = k => pts.filter(f => f.properties.kind === k).length;
+  const polys = mines.features.filter(f => f.properties.src === "usmin" && f.geometry.type === "Polygon").length;
+  const gold = mines.features.filter(f => f.properties.src === "mrds" && f.properties.gold).length;
+  $("#facts").innerHTML = [
+    [count("Adit"), "adits on the old maps"], [count("Mine Shaft"), "shafts"], [count("Prospect Pit"), "prospect pits"],
+    [polys, "tailings, dumps and pits outlined"], [gold, "gold entries in the USGS mineral database"],
+  ].map(([n, t]) => `<div><b>${fmt(n)}</b><span>${t}</span></div>`).join("");
+}
+
+function tabs() {
+  $("#tabs").innerHTML = [`<button data-id="" aria-pressed="${!current}">The whole county</button>`]
+    .concat(places.map(p => `<button data-id="${p.id}" aria-pressed="${current === p.id}">${esc(p.name)}</button>`)).join("");
+  $("#tabs").onclick = e => { const b = e.target.closest("button"); if (b) go(b.dataset.id || null); };
+}
+
+function controls(p) {
+  const rel = p ? Object.entries(p.layers).map(([k, v]) =>
+    `<label><input type="radio" name="rel" value="${k}" ${k === relief ? "checked" : ""}> ${esc(v.label)}</label>`).join("") : "";
+  const legend = Object.values(KIND).map(k => `<span style="color:${k.c}" class="sw"></span> ${k.label}`).join("<br>");
+  return `<div class="controls">
+    ${p ? `<h3>Lidar view</h3>${rel}<label>Opacity <input type="range" id="op" min="0" max="1" step="0.05" value="${opacity}"></label>` : ""}
+    <h3>Mines</h3>
+    <label><input type="checkbox" data-g="usminPts" ${layerOn.usminPts ? "checked" : ""}> Shafts, adits and pits (old topo maps)</label>
+    <label><input type="checkbox" data-g="usminPoly" ${layerOn.usminPoly ? "checked" : ""}> Tailings and dumps (outlines)</label>
+    <label><input type="checkbox" data-g="named" ${layerOn.named ? "checked" : ""}> Named mines (USGS MRDS)</label>
+    <div class="mono" style="font-size:12px;margin-top:6px;line-height:1.7">${legend}<br><span style="color:${TAIL_HEX}" class="sw sq"></span> Tailings or dump<br><span style="color:${NAMED_HEX};transform:rotate(45deg)" class="sw sq"></span> Named mine (gold)</div>
+  </div>`;
+}
+
+function side(p) {
+  if (!p) {
+    $("#side").innerHTML = `<h2>Gold country</h2>
+      <p>Every point here is a hole someone dug: the shafts, adits and prospect pits drawn on USGS topographic maps, plus the tailings and dumps they outlined. They crowd into the western foothills: along the Mother Lode veins at Chinese Camp and Jamestown, and in the old gravel camps of Big Oak Flat, Sonora and Columbia.</p>
+      <p>Pick a place above to see the ground itself in lidar.</p>${controls(null)}`;
+  } else {
+    const L_ = p.lidar;
+    $("#side").innerHTML = `<h2>${esc(p.name)}</h2>${p.story.map(t => `<p>${esc(t)}</p>`).join("")}
+      ${controls(p)}
+      <div class="lidar">Lidar: ${esc(L_.project)}<br>${fmt(L_.ground_points)} ground returns · ${L_.res_m} m grid · ${(L_.coverage * 100).toFixed(1)}% covered<br>
+      Elevation ${Math.round(L_.elev_m[0])}–${Math.round(L_.elev_m[1])} m</div>
+      <p class="src">${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(" · ")}</p>`;
+  }
+  $("#side").querySelectorAll("input[name=rel]").forEach(r => r.onchange = () => { relief = r.value; showRelief(p); });
+  const op = $("#op"); if (op) op.oninput = () => { opacity = +op.value; overlay && overlay.setOpacity(opacity); };
+  $("#side").querySelectorAll("input[data-g]").forEach(c => c.onchange = () => {
+    layerOn[c.dataset.g] = c.checked; c.checked ? groups[c.dataset.g].addTo(map) : map.removeLayer(groups[c.dataset.g]); });
+}
+
+function showRelief(p) {
+  if (overlay) { map.removeLayer(overlay); overlay = null; }
+  if (!p) return;
+  const key = p.layers[relief] ? relief : "composite";
+  overlay = L.imageOverlay(`sites/${p.id}/${p.layers[key].file}`, p.bounds, {opacity, interactive: false}).addTo(map);
+  overlay.bringToBack();
+}
+
+function go(id, fly = true) {
+  current = id;
+  const p = places.find(x => x.id === id) || null;
+  tabs(); side(p); showRelief(p);
+  if (p) map.fitBounds(p.bounds, {padding: [10, 10]});
+  else map.fitBounds(groups.usminPts.getBounds(), {padding: [20, 20]});
+  history.replaceState(null, "", p ? `#${p.id}` : location.pathname);
+}
+
+async function boot() {
+  [places, mines] = await Promise.all([fetch("data/places.json").then(r => r.json()), fetch("data/mines.geojson").then(r => r.json())]);
+  map = L.map("map", {scrollWheelZoom: false, zoomSnap: 0.25});
+  const bm = basemaps();
+  bm["Light"].addTo(map);
+  L.control.layers(bm, null, {position: "topright"}).addTo(map);
+  L.control.scale({imperial: true}).addTo(map);
+  mineLayers(); facts();
+  const want = location.hash.slice(1);
+  go(places.some(p => p.id === want) ? want : null);
+}
+boot().catch(e => { $("#side").innerHTML = `<p>Couldn't load the map data (${esc(e.message)}).</p>`; console.error(e); });
+</script>
+</body>
+</html>

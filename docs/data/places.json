@@ -1,0 +1,152 @@
+[
+ {
+  "id": "columbia",
+  "name": "Columbia",
+  "center": [
+   38.0358,
+   -120.4011
+  ],
+  "bounds": [
+   [
+    38.024611095563664,
+    -120.41856083423875
+   ],
+   [
+    38.04698084533778,
+    -120.3836409706652
+   ]
+  ],
+  "layers": {
+   "composite": {
+    "file": "composite.webp",
+    "label": "Relief composite (after VAT)"
+   },
+   "multi_hillshade": {
+    "file": "multi_hillshade.webp",
+    "label": "Hillshade, 16 directions"
+   },
+   "lrm": {
+    "file": "lrm.webp",
+    "label": "Local relief, ±2.79 m"
+   },
+   "svf": {
+    "file": "svf.webp",
+    "label": "Sky-view factor"
+   },
+   "neg_openness": {
+    "file": "neg_openness.webp",
+    "label": "Negative openness"
+   }
+  },
+  "lrm_clip_m": 2.79,
+  "story": [
+   "Gold was found at Columbia on March 27, 1850. The gold lay in the surface gravels, but there was little water to wash them with, so miners built a network of aqueducts to bring it in, at a cost of more than a million dollars. Between 1850 and the early 1900s about $87 million in gold came out of the surrounding hills.\n",
+   "Water cannons washed the gravel off the bedrock, and the bedrock here is limestone. Limestone dissolves into knobs, pinnacles and deep slots, and the gold settled in between. When the gravel was gone the pinnacles were left standing: the \"rock gardens\" that visitors walk among today.\n",
+   "In the lidar they are the rough, dark ground running south and east of the old town. The water-filled pit east of them is the Bell Columbia Marble Quarry, still listed as a producer. The long flat strip on the west side is Columbia Airport's runway.\n"
+  ],
+  "sources": [
+   {
+    "name": "Columbia State Historic Park (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Columbia_State_Historic_Park"
+   },
+   {
+    "name": "Columbia, California (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Columbia,_California"
+   },
+   {
+    "name": "Bell Columbia Marble Quarry (USGS MRDS)",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10111234"
+   },
+   {
+    "name": "Bedrock geology (Macrostrat)",
+    "url": "https://macrostrat.org/map/#/z=14/x=-120.401/y=38.036"
+   }
+  ],
+  "lidar": {
+   "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+   "coverage": 0.9954,
+   "res_m": 1.0,
+   "ground_points": 29572214,
+   "elev_m": [
+    623.8,
+    778.9
+   ],
+   "seam_shift_m": {
+    "CA_CalaverasTuolumne_2011": 0.014
+   }
+  }
+ },
+ {
+  "id": "harvard-pit",
+  "name": "Harvard Pit, Jamestown Mine",
+  "center": [
+   37.9463,
+   -120.4377
+  ],
+  "bounds": [
+   [
+    37.93607511976231,
+    -120.45282835533607
+   ],
+   [
+    37.956524298898074,
+    -120.4225729495546
+   ]
+  ],
+  "layers": {
+   "composite": {
+    "file": "composite.webp",
+    "label": "Relief composite (after VAT)"
+   },
+   "multi_hillshade": {
+    "file": "multi_hillshade.webp",
+    "label": "Hillshade, 16 directions"
+   },
+   "lrm": {
+    "file": "lrm.webp",
+    "label": "Local relief, ±3.15 m"
+   },
+   "svf": {
+    "file": "svf.webp",
+    "label": "Sky-view factor"
+   },
+   "neg_openness": {
+    "file": "neg_openness.webp",
+    "label": "Negative openness"
+   }
+  },
+  "lrm_clip_m": 3.15,
+  "story": [
+   "The Harvard is the modern end of Mother Lode mining. Underground mines worked these quartz veins in the old days; from 1986 to 1994 Sonora Mining Corporation dug them out from the top instead, in an open pit about 830 m long, 460 m wide and 185 m deep.\n",
+   "When mining ended, the pit began to fill. By November 2000 the lake was about 92 m deep, and the USGS found 720 to 1,100 parts per billion of arsenic in its water. Evaporators now sit in the pit to keep the level down.\n",
+   "In the lidar the lake is a hole: laser light doesn't come back from water. North of it the waste rock stands in stepped dumps cut by haul roads, and the big flat oval to the west is the tailings facility. Its pond leaked, so it was drained, graded, capped with clay, covered with topsoil and seeded.\n"
+  ],
+  "sources": [
+   {
+    "name": "Harvard open pit water (USGS Open-File Report 01-074)",
+    "url": "https://pubs.usgs.gov/of/2001/0074/pdf/of01-074.pdf"
+   },
+   {
+    "name": "Jamestown Mine tailings closure (Central Valley Water Board)",
+    "url": "https://www.waterboards.ca.gov/rwqcb5/water_issues/mining/region5_success_stories/jamestown_mine/"
+   },
+   {
+    "name": "Harvard Mine Group (USGS MRDS)",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10077946"
+   }
+  ],
+  "lidar": {
+   "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+   "coverage": 0.9712,
+   "res_m": 1.0,
+   "ground_points": 53513323,
+   "elev_m": [
+    393.4,
+    569.8
+   ],
+   "seam_shift_m": {
+    "CA_CalaverasTuolumne_2011": -0.038
+   }
+  }
+ }
+]
