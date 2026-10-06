@@ -1,0 +1,55 @@
+200 https://mrdata.usgs.gov/services/wfs/mrds?service=WFS&request=GetCapabilities
+text/xml; charset=UTF-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:WFS_Capabilities xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:ms="http://mapserver.gis.umn.edu/mapserver" xmlns="http://www.opengis.net/wfs/2.0" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+  <ows:ServiceIdentification>
+    <ows:Title>Mineral Resources Data System</ows:Title>
+    <ows:Abstract>Metallic and nonmetallic mineral resources throughout the world. Included are deposit name, location, commodity, deposit description, geologic characteristics, production, reserves, resources, and references.</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>mineral resources; mining and quarrying; abandoned mines</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">WFS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Fees>none</ows:Fees>
+    <ows:AccessConstraints>none</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>U.S. Geological Survey Mineral Resources Program</ows:ProviderName>
+    <ows:ProviderSite xlink:type="simple" xlink:href="https://mrdata.usgs.gov/"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>Peter N. Schweitzer</ows:IndividualName>
+      <ows:PositionName>Geologist</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>703-648-6533</ows:Voice>
+          <ows:Facsimile>703-648-6252</ows:Facsimile>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>Mail Stop 954 USGS National Center</ows:DeliveryPoint>
+          <ows:City>Reston</ows:City>
+          <ows:AdministrativeArea>VA</ows:AdministrativeArea>
+          <ows:PostalCode>20192</ows:PostalCode>
+          <ows:Country>USA</ows:Country>
+          <ows:ElectronicMailAddress>pschweitzer@usgs.gov</ows:ElectronicMailAddress>
+        </ows:Address>
+        <ows:OnlineResource xlink:type="simple" xlink:href="https://mrdata.usgs.gov/"/>
+        <ows:HoursOfService>M-F 9:00am-5:30pm EST/EDT</ows:HoursOfService>
+        <ows:ContactInstructions>Alternate email address: ask@usgs.gov</ows:ContactInstructions>
+      </ows:ContactInfo>
+      <ows:Role>distributor</ows:Role>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://mrdata.usgs.gov/services/wfs/mrds?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://mrdata.usgs.gov/services/wfs/mrds?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="AcceptVersions">
+        <ows:AllowedValues>
+          <ows:Value>2.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+   

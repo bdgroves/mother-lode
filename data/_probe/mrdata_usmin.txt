@@ -1,0 +1,92 @@
+200 https://mrdata.usgs.gov/usmin/
+text/html; charset=UTF-8
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Prospect- and mine-related features on USGS topographic maps</title>
+  <meta name="description" content="Symbols indicating mining-related features digitized from historical USGS topographic maps in the western part of the conterminous US. Includes prospect pits, mine shafts and adits, quarries, open-pit mines, tailings piles and ponds, gravel and borrow pits, and other features.">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/common.css"/>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="/jquery/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+  <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/jquery/jquery.tablesorter.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TKQR8KP');</script>
+  <style>
+    .ml-2 { margin-left: 1.0rem; }
+    .ml-4 { margin-left: 2.0rem; }
+    .mr-4 { margin-right: 2.0rem; }
+    .italic { font-style: italic; }
+    .darkred { color: #660000; }
+    .tt { font-family: monospace; }
+  </style>
+</head>
+<body>
+<!-- USGS header --><header id="navbar" class="header-nav"  role="banner"><div class="tmp-container"><div class="header-search"><a class="logo-header" href="https://www.usgs.gov/" title="Home"><img class="img"  src="/images/logo.png"  alt="Home" /></a></div></div></header>
+<div class="container">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a class="breadcrumb-link" href="https://www.usgs.gov/energy-and-minerals/mineral-resources-program" title="The USGS Mineral Resources Program (MRP) delivers unbiased science and information to increase understanding of ore formation, undiscovered mineral resource potential, production, consumption, and how minerals interact with the environment.  MRP supports data collection and research on a wide variety of non-fuel mineral resources that are important to the Nation?s economic and national security.">Mineral Resources</a></li>
+  <li><a href="/" title="Interactive maps and downloadable data for regional and global geology, geochemistry, geophysics, and mineral resources; products of the USGS Mineral Resources Program">Online Spatial Data</a></li>
+</ol>
+<h3>Prospect- and mine-related features on USGS topographic maps</h3>
+<p>Symbols indicating mining-related features digitized from historical USGS topographic maps in the western part of the conterminous US. Includes prospect pits, mine shafts and adits, quarries, open-pit mines, tailings piles and ponds, gravel and borrow pits, and other features.</p>
+<video width="960" height="540" controls>
+  <source src="USMIN_Topo_Mine_Features_Dates_ver10.mp4" type="video/mp4"/>
+</video>
+    <div class="panel panel-warning">
+      <div class="panel-heading" data-toggle="collapse" data-target="#view" aria-controls="#view"><h4 class="panel-title">View</h4></div>
+      <div class="panel-body" id="view" aria-expanded="true">
+        <p>Show in a web browser window:</p>
+        <div class="row">
+          <div class="col-sm-4 text-center">
+            <a href="/usmin/map-us.html"><img src="/usmin/usmin-large.png" alt="reduced-size image of the interactive map" title="reduced-size image of the interactive map" width="386" height="256"/><br/>United States</a>
+          </div>
+        </div>
+        <p>Show in your GIS using <abbr title="Open Geospatial Consortium">OGC</abbr> web services:</p>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th scope="col">Service, version</th>
+      <th scope="col">URL</th>
+      <th scope="col">Capabilities document</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WMS, version 1.3.0</td>
+      <td class="darkred tt" title="Copy this URL and paste into your GIS application.">https://mrdata.usgs.gov/services/usmin</td>
+      <td><a class="btn btn-xs btn-default" target="blank" title="An XML document indicating the service options available." href="/services/usmin?request=GetCapabilities&amp;service=WMS&amp;version=1.3.0">Capabilities</a></td>
+    </tr>
+    <tr>
+      <td>WFS, version 1.1.0</td>
+      <td class="darkred tt" title="Copy this URL and paste into your GIS application.">https://mrdata.usgs.gov/services/wfs/usmin</td>
+      <td><a class="btn btn-xs btn-default" target="blank" title="An XML document indicating the service options available." href="/services/wfs/usmin?request=GetCapabilities&amp;service=WFS&amp;version=1.1.0">Capabilities</a></td>
+    </tr>
+  </tbody>
+</table>
+        <p>Download compressed KML or view in Google Earth:</p>
+        <table class="table table-condensed ml-2 tablesorter" id="table-0">
+          <thead>
+            <tr class="bg-success">
+              <th scope="col">State</th>
+              <th scope="col">KML</th>
+              <th scope="col">Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alabama</td>
+              <td><a href="kml/usmin-AL.kmz">usmin-AL.kmz</a></td>
+              <td>10.9M bytes</td>
+            </tr>
+            <tr>
+              <td>Alaskma</td>
+              <td><a href="kml/usmin-AK.kmz">usmin-AK.kmz</a></td>
+  
