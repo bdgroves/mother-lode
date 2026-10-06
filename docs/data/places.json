@@ -196,7 +196,8 @@
   "story": [
    "The Rawhide was one of the big underground mines of the Jamestown district, credited with about $6 million in gold. Its vein, of quartz and dolomite with gold and pyrite, was up to 70 feet thick between the walls, with an ore vein averaging 20 feet, and the main shaft followed it down the incline for 2,000 feet.\n",
    "Around 1890 the district's lode mines took off, and in 1906 more than 300 stamps were pounding ore in its mills. Lode mining here ran until about World War I. Later development at the Rawhide, in 1921, proved worthless.\n",
-   "Underground mines leave less on the surface than pits and hydraulic diggings, so look for what came out of the hole: dumps of waste rock around the shafts, and the flat benches of old mill sites.\n"
+   "Underground mines leave less on the surface than pits and hydraulic diggings, so look for what came out of the hole: dumps of waste rock around the shafts, and the flat benches of old mill sites.\n",
+   "The long, smooth ridge curving across the east side is Table Mountain: a lava flow that ran down an ancient channel of the Stanislaus River about 10 million years ago and filled it. The softer ground around it has worn away, so the old riverbed now stands as an 18-mile, flat-topped ridge. The gold-bearing gravels buried beneath it were mined too.\n"
   ],
   "sources": [
    {
@@ -206,6 +207,10 @@
    {
     "name": "Rawhide (USGS MRDS)",
     "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10034614"
+   },
+   {
+    "name": "Table Mountain (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Table_Mountain_(Tuolumne_County,_California)"
    }
   ],
   "lidar": {

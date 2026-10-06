@@ -92,9 +92,17 @@ places:
         Underground mines leave less on the surface than pits and hydraulic
         diggings, so look for what came out of the hole: dumps of waste rock
         around the shafts, and the flat benches of old mill sites.
+      - >
+        The long, smooth ridge curving across the east side is Table
+        Mountain: a lava flow that ran down an ancient channel of the
+        Stanislaus River about 10 million years ago and filled it. The softer
+        ground around it has worn away, so the old riverbed now stands as an
+        18-mile, flat-topped ridge. The gold-bearing gravels buried beneath it
+        were mined too.
     sources:
       - {name: "Jamestown district (Oakland Museum of California)", url: "https://explore.museumca.org/goldrush/dist-jamestown.html"}
       - {name: "Rawhide (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10034614"}
+      - {name: "Table Mountain (Wikipedia)", url: "https://en.wikipedia.org/wiki/Table_Mountain_(Tuolumne_County,_California)"}
   eagle-shawmut:
     name: Eagle-Shawmut Mine
     center: [37.8669, -120.3956]   # MRDS dep_id 10310611, Eagle-Shawmut Mine
