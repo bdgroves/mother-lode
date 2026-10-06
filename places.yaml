@@ -103,8 +103,8 @@ places:
     project: [CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011]
     story:
       - >
-        The Eagle-Shawmut, east of Chinese Camp, was one of the largest gold
-        mines on the southern Mother Lode: about $7.4 million in gold. It
+        The Eagle-Shawmut, east of Chinese Camp, was a major Mother Lode
+        mine, credited with about $7.4 million in gold. It
         worked on and off until 1892, then almost continuously (except for
         1926 to 1936) until it shut down in 1947.
       - >
@@ -114,8 +114,8 @@ places:
         of tunnels, and there was open-pit mining here by 1936.
       - >
         The mill stood almost at the level of Woods Creek. Don Pedro Reservoir
-        now fills that canyon, so in the lidar the water is a blank, and
-        whatever is left of the lower mine lies beneath it.
+        now fills that canyon, so in the lidar the water is a blank, and the
+        old mill site is most likely under it.
     sources:
       - {name: "Eagle-Shawmut Mine (Western Mining History, from USGS MRDS)", url: "https://westernmininghistory.com/mine-detail/10310611/"}
       - {name: "Eagle-Shawmut Mine (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10310611"}
@@ -130,12 +130,12 @@ places:
       - >
         Gold was found here in 1848 by James Savage, and the camp was first
         called Savage Diggins. It was renamed Big Oak Flat about 1850 for a
-        giant oak in the middle of town. The miners undermined the tree
-        digging for gold beneath it in 1869, and it burned in 1890.
+        giant oak in the middle of town, about 13 feet across. The tree was
+        undermined in 1869 and burned in 1890; pieces of it remain.
       - >
         The gravels at Big Oak Flat and Deer Flat were rich: they are credited
         with about $25 million in placer gold. Lode mining followed and kept
-        going until World War I. A mile or so east, the camp called Garrote
+        going until World War I. Two miles east, the camp called Garrote
         became Groveland.
       - >
         In the lidar, look for the scars of the early placer work along the
