@@ -1,0 +1,29 @@
+name: Build lidar places
+on:
+  workflow_dispatch:
+    inputs:
+      places:
+        description: "Place ids, comma-separated"
+        default: "columbia"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: prefix-dev/setup-pixi@v0.9.0
+        with: {cache: false, locked: false}
+      - name: Build
+        run: |
+          for p in $(echo "${{ inputs.places }}" | tr ',' ' '); do
+            pixi run ml build "$p" 2>&1 | tee -a build.log
+          done
+          echo "::notice::$(grep -E 'ground returns|DTM|done in' build.log | tr '\n' ' ')"
+      - name: Commit web layers
+        run: |
+          git config user.name "mother-lode bot"; git config user.email "actions@github.com"
+          mkdir -p logs && cp build.log logs/build-$(date -u +%Y%m%dT%H%MZ).log
+          git add docs/sites logs
+          git commit -m "build: ${{ inputs.places }}" && git pull --rebase && git push || echo "nothing new"

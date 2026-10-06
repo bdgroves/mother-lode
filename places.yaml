@@ -1,0 +1,14 @@
+# Lidar windows. Coordinates are checked against a source before a place goes in.
+# project: a USGS 3DEP EPT project that covers the window (see README).
+places:
+  columbia:
+    name: Columbia
+    center: [38.0358, -120.4011]   # Columbia State Historic Park (Wikipedia)
+    size_m: [3000, 2400]
+    res: 1.0
+    crs: "EPSG:26910"
+    project: CA_SierraNevada_12_B22
+    blurb: >
+      Gold was found here on March 27, 1850, and Columbia became one of the
+      richest camps of the Gold Rush. The diggings around the town were
+      worked down to bedrock.

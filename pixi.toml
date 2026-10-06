@@ -1,0 +1,25 @@
+[workspace]
+name = "mother-lode"
+description = "Gold country in lidar, old mine maps and geology"
+version = "0.1.0"
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64"]
+
+[tasks]
+ml    = "python -m motherlode.cli"
+probe = "python scripts/probe.py"
+serve = "python -m http.server 8000 -d docs"
+
+[dependencies]
+python      = "3.12.*"
+pdal        = ">=2.8"
+python-pdal = ">=3.4"
+rasterio    = ">=1.4"
+pyproj      = ">=3.6"
+numpy       = ">=1.26"
+scipy       = ">=1.12"
+pillow      = ">=10.0"
+shapely     = ">=2.0"
+click       = ">=8.1"
+pyyaml      = ">=6.0"
+requests    = ">=2.31"
