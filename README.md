@@ -4,7 +4,15 @@ Gold country in lidar, old mine maps and geology: the Mother Lode belt of
 Tuolumne County, California, from Big Oak Flat and Groveland north through
 Chinese Camp, Jamestown, Sonora and Columbia.
 
-Work in progress. The plan:
+**Map:** https://brooksgroves.com/mother-lode/ ·
+**Story:** https://brooksgroves.com/blog/mother-lode-post.html ·
+**Picking this up?** Read [HANDOFF.md](HANDOFF.md).
+
+Five places in bare-earth lidar (Columbia, the Harvard pit at Jamestown, the
+Rawhide, Eagle-Shawmut and Big Oak Flat) and every USGS mine feature in the
+county: 410 adits, 285 shafts, 345 prospect pits, 210 tailings and dump
+outlines, and the named mines from the Mineral Resources Data System. What it's
+built from:
 
 1. **Every mine on the old maps.** USGS digitised every shaft, adit, prospect
    pit and tailings pile drawn on its historical topographic maps (USMIN).
