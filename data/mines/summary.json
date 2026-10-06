@@ -1,0 +1,149 @@
+{
+ "usmin": {
+  "features": 1160,
+  "fields": [
+   "_layer",
+   "compiledby",
+   "county",
+   "dir",
+   "ftr_azimut",
+   "ftr_name",
+   "ftr_type",
+   "gda_id",
+   "lowerCorner",
+   "remarks",
+   "scanid",
+   "state",
+   "topo_date",
+   "topo_name",
+   "topo_scale",
+   "upperCorner",
+   "url"
+  ],
+  "sample": [
+   {
+    "lowerCorner": "37.881441 -119.312176",
+    "upperCorner": "37.881441 -119.312176",
+    "state": "CA",
+    "county": "Tuolumne",
+    "ftr_type": "Borrow Pit",
+    "ftr_azimut": "0",
+    "topo_name": "Tioga Pass",
+    "topo_date": "1990",
+    "topo_scale": "24000",
+    "compiledby": "CA Dept Conserv",
+    "gda_id": "5524659",
+    "scanid": "295476",
+    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=point&id=50514",
+    "_layer": "points"
+   },
+   {
+    "lowerCorner": "37.854311 -119.216363",
+    "upperCorner": "37.854311 -119.216363",
+    "state": "CA",
+    "county": "Tuolumne",
+    "ftr_type": "Mine Shaft",
+    "ftr_azimut": "0",
+    "topo_name": "Koip Peak",
+    "topo_date": "1988",
+    "topo_scale": "24000",
+    "compiledby": "CA Dept Conserv",
+    "gda_id": "5516597",
+    "scanid": "291918",
+    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=point&id=58791",
+    "_layer": "points"
+   },
+   {
+    "lowerCorner": "37.847082 -119.217825",
+    "upperCorner": "37.847082 -119.217825",
+    "state": "CA",
+    "county": "Tuolumne",
+    "ftr_type": "Mine Shaft",
+    "ftr_azimut": "0",
+    "topo_name": "Koip Peak",
+    "topo_date": "1988",
+    "topo_scale": "24000",
+    "compiledby": "CA Dept Conserv",
+    "gda_id": "5516597",
+    "scanid": "291918",
+    "url": "https://mrdata.usgs.gov/usmin/show-usmin.php?type=point&id=58795",
+    "_layer": "points"
+   }
+  ]
+ },
+ "mrds": {
+  "features": 1305,
+  "fields": [
+   "_layer",
+   "code_list",
+   "dep_id",
+   "dev_stat",
+   "fips_code",
+   "huc_code",
+   "lowerCorner",
+   "quad_code",
+   "site_name",
+   "upperCorner",
+   "url"
+  ],
+  "sample": [
+   {
+    "lowerCorner": "37.824120 -120.036790",
+    "upperCorner": "37.824120 -120.036790",
+    "dep_id": "10141759",
+    "site_name": "Gravel Range",
+    "dev_stat": "Prospect",
+    "fips_code": "f06109",
+    "huc_code": "h18040009",
+    "quad_code": "q38122NEH2",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10141759",
+    "code_list": "AU",
+    "_layer": "mrds"
+   },
+   {
+    "lowerCorner": "38.002720 -120.054290",
+    "upperCorner": "38.002720 -120.054290",
+    "dep_id": "10165596",
+    "site_name": "North Fork No. 1",
+    "dev_stat": "Unknown",
+    "fips_code": "f06109",
+    "huc_code": "h18040009",
+    "quad_code": "q39122SEH4",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10165596",
+    "code_list": "AU",
+    "_layer": "mrds"
+   },
+   {
+    "lowerCorner": "37.864620 -119.991790",
+    "upperCorner": "37.864620 -119.991790",
+    "dep_id": "10214645",
+    "site_name": "Quarry",
+    "dev_stat": "Unknown",
+    "fips_code": "f06109",
+    "huc_code": "h18040009",
+    "quad_code": "q38120NWA2",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10214645",
+    "code_list": "STN",
+    "_layer": "mrds"
+   }
+  ]
+ },
+ "log": [
+  "usmin: feature types ['polygons', 'points']; formats ['text/xml; subtype=gml/2.1.2', 'text/xml; subtype=gml/3.1.1']",
+  "  usmin/polygons as geojson: 200 JSONDecodeError",
+  "  usmin/polygons as application/json: 200 JSONDecodeError",
+  "  usmin/polygons as json: 200 JSONDecodeError",
+  "  usmin/polygons as GML: 0 point features",
+  "  usmin/points as geojson: 200 JSONDecodeError",
+  "  usmin/points as application/json: 200 JSONDecodeError",
+  "  usmin/points as json: 200 JSONDecodeError",
+  "  usmin/points as GML: 2732 point features",
+  "usmin: 1160 features inside Tuolumne County",
+  "mrds: feature types ['mrds']; formats ['text/xml; subtype=gml/2.1.2', 'text/xml; subtype=gml/3.1.1']",
+  "  mrds/mrds as geojson: 200 JSONDecodeError",
+  "  mrds/mrds as application/json: 200 JSONDecodeError",
+  "  mrds/mrds as json: 200 JSONDecodeError",
+  "  mrds/mrds as GML: 4083 point features",
+  "mrds: 1305 features inside Tuolumne County"
+ ]
+}
