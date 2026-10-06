@@ -69,3 +69,78 @@ places:
       - {name: "Harvard open pit water (USGS Open-File Report 01-074)", url: "https://pubs.usgs.gov/of/2001/0074/pdf/of01-074.pdf"}
       - {name: "Jamestown Mine tailings closure (Central Valley Water Board)", url: "https://www.waterboards.ca.gov/rwqcb5/water_issues/mining/region5_success_stories/jamestown_mine/"}
       - {name: "Harvard Mine Group (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10077946"}
+  rawhide:
+    name: Rawhide Mine
+    center: [37.9613, -120.4457]   # MRDS dep_id 10034614, Rawhide (past producer, gold)
+    size_m: [2200, 2000]
+    res: 1.0
+    crs: "EPSG:26910"
+    project: [CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011]
+    story:
+      - >
+        The Rawhide was one of the big underground mines of the Jamestown
+        district, credited with about $6 million in gold. Its vein of quartz
+        and dolomite averaged 20 feet thick and swelled to 70 feet in places,
+        and the main shaft followed it down to a depth of 2,000 feet.
+      - >
+        Around 1890 the district's lode mines took off, and by 1906 more than
+        300 stamps were pounding ore in its mills. Lode mining here ran until
+        about World War I. Later development at the Rawhide, in 1921, proved
+        worthless.
+      - >
+        Underground mines leave less on the surface than pits and hydraulic
+        diggings, so look for what came out of the hole: dumps of waste rock
+        around the shafts, and the flat benches of old mill sites.
+    sources:
+      - {name: "Jamestown district (Oakland Museum of California)", url: "https://explore.museumca.org/goldrush/dist-jamestown.html"}
+      - {name: "Rawhide (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10034614"}
+  eagle-shawmut:
+    name: Eagle-Shawmut Mine
+    center: [37.8669, -120.3956]   # MRDS dep_id 10310611, Eagle-Shawmut Mine
+    size_m: [2600, 2200]
+    res: 1.0
+    crs: "EPSG:26910"
+    project: [CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011]
+    story:
+      - >
+        The Eagle-Shawmut, east of Chinese Camp, was one of the largest gold
+        mines on the southern Mother Lode: about $7.4 million in gold. It
+        worked on and off until 1892, then almost continuously (except for
+        1926 to 1936) until it shut down in 1947.
+      - >
+        Its ore wasn't a rich vein but big bodies of low-grade rock laced with
+        pyrite, the green mica-bearing rock called mariposite among it. By
+        1940 the workings reached about 2,400 feet down, with some seven miles
+        of tunnels, and there was open-pit mining here by 1936.
+      - >
+        The mill stood almost at the level of Woods Creek. Don Pedro Reservoir
+        now fills that canyon, so in the lidar the water is a blank, and
+        whatever is left of the lower mine lies beneath it.
+    sources:
+      - {name: "Eagle-Shawmut Mine (Western Mining History, from USGS MRDS)", url: "https://westernmininghistory.com/mine-detail/10310611/"}
+      - {name: "Eagle-Shawmut Mine (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10310611"}
+  big-oak-flat:
+    name: Big Oak Flat
+    center: [37.8227, -120.2607]   # California Historical Landmark 406 marker (HMdb)
+    size_m: [2600, 2200]
+    res: 1.0
+    crs: "EPSG:26910"
+    project: [CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011]
+    story:
+      - >
+        Gold was found here in 1848 by James Savage, and the camp was first
+        called Savage Diggins. It was renamed Big Oak Flat about 1850 for a
+        giant oak in the middle of town. The miners undermined the tree
+        digging for gold beneath it in 1869, and it burned in 1890.
+      - >
+        The gravels at Big Oak Flat and Deer Flat were rich: they are credited
+        with about $25 million in placer gold. Lode mining followed and kept
+        going until World War I. A mile or so east, the camp called Garrote
+        became Groveland.
+      - >
+        In the lidar, look for the scars of the early placer work along the
+        creeks and flats, and the dumps of the lode mines in the hills around
+        town.
+    sources:
+      - {name: "Big Oak Flat historical marker, California Historical Landmark 406 (HMdb)", url: "https://www.hmdb.org/m.asp?m=194153"}
+      - {name: "Big Oak Flat district (Oakland Museum of California)", url: "https://explore.museumca.org/goldrush/dist-bigoak.html"}
