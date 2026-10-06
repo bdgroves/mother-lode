@@ -1,0 +1,13 @@
+name: Probe data sources
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: pip install requests && python scripts/probe.py
+      - run: |
+          git config user.name "mother-lode bot"; git config user.email "actions@github.com"
+          git add data/_probe && git commit -m "probe: data sources" && git push || echo "nothing to commit"

@@ -1,0 +1,4 @@
+data/sites/*/laz/
+__pycache__/
+.pixi/
+*.pyc
