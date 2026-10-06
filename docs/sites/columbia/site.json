@@ -1,0 +1,57 @@
+{
+ "id": "columbia",
+ "name": "Columbia",
+ "blurb": "Gold was found here on March 27, 1850, and Columbia became one of the richest camps of the Gold Rush. The diggings around the town were worked down to bedrock.",
+ "center": [
+  38.0358,
+  -120.4011
+ ],
+ "res_m": 1.0,
+ "crs": "EPSG:26910",
+ "size_m": [
+  3000,
+  2400
+ ],
+ "source": "USGS 3DEP point cloud (EPT on AWS)",
+ "project": "CA_SierraNevada_12_B22",
+ "ground_points": 14510002,
+ "ground_density": 2.02,
+ "coverage": 0.3641,
+ "elev_m": [
+  639.9,
+  778.9
+ ],
+ "bounds": [
+  [
+   38.024611095563664,
+   -120.41856083423875
+  ],
+  [
+   38.04698084533778,
+   -120.3836409706652
+  ]
+ ],
+ "layers": {
+  "composite": {
+   "file": "composite.webp",
+   "label": "Relief composite (after VAT)"
+  },
+  "multi_hillshade": {
+   "file": "multi_hillshade.webp",
+   "label": "Hillshade, 16 directions"
+  },
+  "lrm": {
+   "file": "lrm.webp",
+   "label": "Local relief, ±3.39 m"
+  },
+  "svf": {
+   "file": "svf.webp",
+   "label": "Sky-view factor"
+  },
+  "neg_openness": {
+   "file": "neg_openness.webp",
+   "label": "Negative openness"
+  }
+ },
+ "lrm_clip_m": 3.39
+}
