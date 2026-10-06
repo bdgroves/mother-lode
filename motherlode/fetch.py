@@ -91,7 +91,7 @@ def _ept_grid(project, site, out_tif: Path, log=print) -> int:
 def fetch_ept(site, out_tif: Path, log=print) -> dict:
     """Grid each project in `project` (a name or a list, best first) and fill
     the first one's gaps from the next. Survey edges run through some windows:
-    Columbia sits on the edge of the 2022 Sierra Nevada flight, and the 2011
+    Columbia sits on the edge of the newer Sierra Nevada flight, and the 2011
     Calaveras-Tuolumne survey covers the rest.
 
     Where two surveys overlap, the later one is shifted by the median height
