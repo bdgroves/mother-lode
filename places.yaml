@@ -115,7 +115,9 @@ places:
       - >
         The mill stood almost at the level of Woods Creek. Don Pedro Reservoir
         now fills that canyon, so in the lidar the water is a blank, and the
-        old mill site is most likely under it.
+        old mill site is most likely under it. The USGS topo maps of 1947 and
+        1948 outlined tailings along the creek below the mine; on this map
+        those outlines now lie out on the water.
     sources:
       - {name: "Eagle-Shawmut Mine (Western Mining History, from USGS MRDS)", url: "https://westernmininghistory.com/mine-detail/10310611/"}
       - {name: "Eagle-Shawmut Mine (USGS MRDS)", url: "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10310611"}

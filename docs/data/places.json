@@ -152,5 +152,210 @@
     "CA_CalaverasTuolumne_2011": -0.038
    }
   }
+ },
+ {
+  "id": "rawhide",
+  "name": "Rawhide Mine",
+  "center": [
+   37.9613,
+   -120.4457
+  ],
+  "bounds": [
+   [
+    37.95201987572849,
+    -120.45852834573773
+   ],
+   [
+    37.97057071137539,
+    -120.43289046937078
+   ]
+  ],
+  "layers": {
+   "composite": {
+    "file": "composite.webp",
+    "label": "Relief composite (after VAT)"
+   },
+   "multi_hillshade": {
+    "file": "multi_hillshade.webp",
+    "label": "Hillshade, 16 directions"
+   },
+   "lrm": {
+    "file": "lrm.webp",
+    "label": "Local relief, ±2.94 m"
+   },
+   "svf": {
+    "file": "svf.webp",
+    "label": "Sky-view factor"
+   },
+   "neg_openness": {
+    "file": "neg_openness.webp",
+    "label": "Negative openness"
+   }
+  },
+  "lrm_clip_m": 2.94,
+  "story": [
+   "The Rawhide was one of the big underground mines of the Jamestown district, credited with about $6 million in gold. Its vein of quartz and dolomite averaged 20 feet thick and swelled to 70 feet in places, and the main shaft followed it down to a depth of 2,000 feet.\n",
+   "Around 1890 the district's lode mines took off, and by 1906 more than 300 stamps were pounding ore in its mills. Lode mining here ran until about World War I. Later development at the Rawhide, in 1921, proved worthless.\n",
+   "Underground mines leave less on the surface than pits and hydraulic diggings, so look for what came out of the hole: dumps of waste rock around the shafts, and the flat benches of old mill sites.\n"
+  ],
+  "sources": [
+   {
+    "name": "Jamestown district (Oakland Museum of California)",
+    "url": "https://explore.museumca.org/goldrush/dist-jamestown.html"
+   },
+   {
+    "name": "Rawhide (USGS MRDS)",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10034614"
+   }
+  ],
+  "lidar": {
+   "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+   "coverage": 0.9993,
+   "res_m": 1.0,
+   "ground_points": 34589145,
+   "elev_m": [
+    405.3,
+    570.8
+   ],
+   "seam_shift_m": {
+    "CA_CalaverasTuolumne_2011": -0.023
+   }
+  }
+ },
+ {
+  "id": "eagle-shawmut",
+  "name": "Eagle-Shawmut Mine",
+  "center": [
+   37.8669,
+   -120.3956
+  ],
+  "bounds": [
+   [
+    37.856670586711694,
+    -120.41071831223285
+   ],
+   [
+    37.87712948373435,
+    -120.38049586626377
+   ]
+  ],
+  "layers": {
+   "composite": {
+    "file": "composite.webp",
+    "label": "Relief composite (after VAT)"
+   },
+   "multi_hillshade": {
+    "file": "multi_hillshade.webp",
+    "label": "Hillshade, 16 directions"
+   },
+   "lrm": {
+    "file": "lrm.webp",
+    "label": "Local relief, ±3.68 m"
+   },
+   "svf": {
+    "file": "svf.webp",
+    "label": "Sky-view factor"
+   },
+   "neg_openness": {
+    "file": "neg_openness.webp",
+    "label": "Negative openness"
+   }
+  },
+  "lrm_clip_m": 3.68,
+  "story": [
+   "The Eagle-Shawmut, east of Chinese Camp, was a major Mother Lode mine, credited with about $7.4 million in gold. It worked on and off until 1892, then almost continuously (except for 1926 to 1936) until it shut down in 1947.\n",
+   "Its ore wasn't a rich vein but big bodies of low-grade rock laced with pyrite, the green mica-bearing rock called mariposite among it. By 1940 the workings reached about 2,400 feet down, with some seven miles of tunnels, and there was open-pit mining here by 1936.\n",
+   "The mill stood almost at the level of Woods Creek. Don Pedro Reservoir now fills that canyon, so in the lidar the water is a blank, and the old mill site is most likely under it. The USGS topo maps of 1947 and 1948 outlined tailings along the creek below the mine; on this map those outlines now lie out on the water.\n"
+  ],
+  "sources": [
+   {
+    "name": "Eagle-Shawmut Mine (Western Mining History, from USGS MRDS)",
+    "url": "https://westernmininghistory.com/mine-detail/10310611/"
+   },
+   {
+    "name": "Eagle-Shawmut Mine (USGS MRDS)",
+    "url": "https://mrdata.usgs.gov/mrds/show-mrds.php?dep_id=10310611"
+   }
+  ],
+  "lidar": {
+   "project": "CA_SierraNevada_12_B22, CA_CalaverasTuolumne_2011",
+   "coverage": 0.8853,
+   "res_m": 1.0,
+   "ground_points": 47075421,
+   "elev_m": [
+    235.3,
+    512.9
+   ],
+   "seam_shift_m": {
+    "CA_CalaverasTuolumne_2011": 0.011
+   }
+  }
+ },
+ {
+  "id": "big-oak-flat",
+  "name": "Big Oak Flat",
+  "center": [
+   37.8227,
+   -120.2607
+  ],
+  "bounds": [
+   [
+    37.81243892311469,
+    -120.27581929406306
+   ],
+   [
+    37.83293965786523,
+    -120.24558257875127
+   ]
+  ],
+  "layers": {
+   "composite": {
+    "file": "composite.webp",
+    "label": "Relief composite (after VAT)"
+   },
+   "multi_hillshade": {
+    "file": "multi_hillshade.webp",
+    "label": "Hillshade, 16 directions"
+   },
+   "lrm": {
+    "file": "lrm.webp",
+    "label": "Local relief, ±3.48 m"
+   },
+   "svf": {
+    "file": "svf.webp",
+    "label": "Sky-view factor"
+   },
+   "neg_openness": {
+    "file": "neg_openness.webp",
+    "label": "Negative openness"
+   }
+  },
+  "lrm_clip_m": 3.48,
+  "story": [
+   "Gold was found here in 1848 by James Savage, and the camp was first called Savage Diggins. It was renamed Big Oak Flat about 1850 for a giant oak in the middle of town, about 13 feet across. The tree was undermined in 1869 and burned in 1890; pieces of it remain.\n",
+   "The gravels at Big Oak Flat and Deer Flat were rich: they are credited with about $25 million in placer gold. Lode mining followed and kept going until World War I. Two miles east, the camp called Garrote became Groveland.\n",
+   "In the lidar, look for the scars of the early placer work along the creeks and flats, and the dumps of the lode mines in the hills around town.\n"
+  ],
+  "sources": [
+   {
+    "name": "Big Oak Flat historical marker, California Historical Landmark 406 (HMdb)",
+    "url": "https://www.hmdb.org/m.asp?m=194153"
+   },
+   {
+    "name": "Big Oak Flat district (Oakland Museum of California)",
+    "url": "https://explore.museumca.org/goldrush/dist-bigoak.html"
+   }
+  ],
+  "lidar": {
+   "project": "CA_SierraNevada_12_B22",
+   "coverage": 0.9998,
+   "res_m": 1.0,
+   "ground_points": 29479989,
+   "elev_m": [
+    634.5,
+    1026.4
+   ],
+   "seam_shift_m": {}
+  }
  }
 ]
