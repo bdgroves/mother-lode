@@ -78,7 +78,7 @@ Dispatch from the sandbox:
   The checks here have caught real mistakes each time; keep doing it.
 - Blog tone: warm and friendly, never sharp. First person is Brooks.
 - Brooks uses Windows PowerShell; give PowerShell commands, real paths (his
-  clones live in `C:\Users\brook\Documents\`).
+  local working clones live in `C:\Users\brook\Projects\`).
 - Commit trailer: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   plus the `Claude-Session:` line for the current session.
 - Keyless basemaps only (Esri tiles); no CARTO.
