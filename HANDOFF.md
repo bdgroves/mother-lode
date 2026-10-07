@@ -104,13 +104,15 @@ Dispatch from the sandbox:
    renderer already works on this pipeline; tag @milos_gis only for forge3d).
 4. **Iron staining from space** (ties to Brooks's 1990s mineral-bioprocessing
    work): Sentinel-2 iron-oxide index over old mines and tailings.
-5. Settle Big Oak Flat's date: marker says gold found 1848; the Tuolumne County
-   Historical Society says Savage founded the towns in 1849. Post follows the
-   marker. Ask Brooks.
+5. ~~Big Oak Flat's date~~ settled: Brooks confirms **1848**, which the map
+   and post already say.
 
 ### Site (brooksgroves.com)
-6. Rainier Snowpack and Wildfire Response Gaps are the only projects with no
-   blog post yet — story ideas.
+6. ~~Story posts~~ done Oct 7: `blog/rainier-snowpack-post.html` and
+   `blog/wildfire-response-gaps-post.html`. Follow-up: wildfire-response-gaps
+   shades 15 RFPA counties, but ODF's June 2026 Board packet says RFPAs span
+   nine. Redraw from real RFPA boundaries; the post's caveat says so. The
+   project README still has old numbers (74 of 75) and "5am" (cron is 13:00 UTC).
 7. Link checker: `bdgroves.github.io/tools/linkcheck/`, manual workflow
    `link-check.yml`, report on the `link-report` branch. Run it again after
    today's changes.
