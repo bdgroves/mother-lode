@@ -120,6 +120,26 @@ Dispatch from the sandbox:
    stylesheet for the project link bar). Don't start without him.
 9. **Parked:** BdgrovesBot (Wikipedia bot), another day.
 
+### Search (Google Search Console, set up Oct 7)
+- Canonical tags on every page + `sitemap.xml` (131 entries: 105 site pages
+  and 26 project front pages), all from `bdgroves.github.io/scripts/seo.py`,
+  which the deploy runs. Brooks submitted the sitemap and clicked Validate
+  fix on "Duplicate without user-selected canonical".
+- HopLove hop pages got new titles/descriptions (origin, aroma, alpha,
+  beers). Baseline week Sep 28-Oct 4: 2,140 impressions, 16 clicks, hop
+  pages 531 impressions / 0 clicks at median position 17.
+- **Late October:** re-export Performance (3 months) and compare. If hop
+  pages get clicks, do the same for HopLove beer pages and the blog.
+- The 404 list (old /hoplore/, recipe worker actions, old journal path, an
+  old RIDGELINE csv) is harmless; nothing to fix.
+
+### secchi (small)
+- HANDOFF.md still says `C:\data\01_Projects\secchi`; Brooks's laptop
+  clone is `C:\Users\brook\Projects\secchi`.
+- `pixi lock` to upgrade the lock file format (harmless warning).
+- Tests can't run on the laptop (Smart App Control blocks numpy's DLLs);
+  the `test` workflow on GitHub Actions runs them instead.
+
 ### Bigger ideas Brooks raised
 10. **Nevada / UNR:** Nevada Bureau of Mines and Geology open data
     (https://data-nbmg.opendata.arcgis.com/) — the Comstock, Peavine, or the
