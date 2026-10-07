@@ -153,6 +153,18 @@ Dispatch from the sandbox:
   gh-pages workflow, so page edits go live when that workflow runs.
 - Little Free Pantry is archived: Brooks applies `little-free-pantry-footer.patch`.
 
+### Dakar 2027 (Oct 7)
+- The route outline (ASO, May 2026) is mapped on `dakar-2027.html`, from
+  `route_outline` in `dakar.json`. Coordinates and town order were fact-checked.
+- New flyover project `bdgroves/dakar-flyover`, built from icefields-flyover.
+  Brooks renders it on his own machine: `pixi run data`, `stills`, `render`.
+  Tested here end to end on synthetic terrain with software Vulkan; the real
+  data download has only ever run on Brooks's machine.
+- forge3d quietly caps the orbit radius at about 5% of the terrain width.
+  `flight.camera()` moves the target along the line of sight to stay under it.
+- **December:** when ASO publishes the stage-by-stage route, update
+  `route.py` (flyover) and `dakar.json` (page), re-render, post before Jan 1.
+
 ### Bigger ideas Brooks raised
 10. **Nevada / UNR:** Nevada Bureau of Mines and Geology open data
     (https://data-nbmg.opendata.arcgis.com/) — the Comstock, Peavine, or the
