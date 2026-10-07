@@ -157,9 +157,13 @@ Dispatch from the sandbox:
 - The route outline (ASO, May 2026) is mapped on `dakar-2027.html`, from
   `route_outline` in `dakar.json`. Coordinates and town order were fact-checked.
 - New flyover project `bdgroves/dakar-flyover`, built from icefields-flyover.
-  Brooks renders it on his own machine: `pixi run data`, `stills`, `render`.
-  Tested here end to end on synthetic terrain with software Vulkan; the real
-  data download has only ever run on Brooks's machine.
+  Data download + prep + test stills run on GitHub Actions ("Data and
+  stills"), which publishes the `prep-data` and `stills` branches.
+  Full renders run on Brooks's laptop GPU (RTX A1000) with the `f3d`
+  PowerShell function, which borrows the trusted humphreys-orbit env
+  (forge3d 1.39); a fresh pixi env is blocked by Smart App Control. Never
+  pixi install/update/add in humphreys-orbit. See the repo README.
+  Preview: 1,054 frames in 8 min. Actions' 40-job CPU render is the fallback.
 - forge3d quietly caps the orbit radius at about 5% of the terrain width.
   `flight.camera()` moves the target along the line of sight to stay under it.
 - **December:** when ASO publishes the stage-by-stage route, update
