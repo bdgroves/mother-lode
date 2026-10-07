@@ -1,0 +1,51 @@
+name: Flyover data
+
+# Builds what the forge3d flyover needs for a place: the bare-earth DTM from
+# 3DEP lidar (the same build as the map), the NAIP aerial photo and the
+# shaded texture, then publishes them to the `flyover-data` branch under
+# <place>/. Brooks renders locally from that branch with `f3d` (see
+# flyover/README.md): his laptop can't run PDAL (Smart App Control).
+on:
+  workflow_dispatch:
+    inputs:
+      place:
+        description: "Place id"
+        default: "columbia"
+  push:
+    branches: [main]
+    paths:
+      - "flyover/prep.py"
+      - ".github/workflows/flyover-data.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PLACE: ${{ inputs.place || 'columbia' }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: prefix-dev/setup-pixi@v0.9.0
+        with: {cache: false, locked: false}
+      - name: Bare-earth DTM and relief (lidar)
+        run: pixi run ml build "$PLACE" 2>&1 | tail -20
+      - name: Aerial photo and texture
+        run: |
+          pixi run python flyover/prep.py "$PLACE"
+      - name: Publish to the flyover-data branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/f && cd /tmp/f
+          git init -q -b flyover-data
+          if git fetch -q --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" flyover-data; then
+            git checkout -q FETCH_HEAD -- . 2>/dev/null || true
+          fi
+          rm -rf "$PLACE" && mkdir -p "$PLACE" && cp "$GITHUB_WORKSPACE/flyover/data/$PLACE/"* "$PLACE/"
+          git config user.name "mother-lode bot"; git config user.email "actions@github.com"
+          git add -A && git commit -q -m "flyover data: $PLACE (${GITHUB_SHA::7})"
+          git push -f -q "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" flyover-data
+          ls -la "$PLACE"
