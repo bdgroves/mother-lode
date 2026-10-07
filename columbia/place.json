@@ -1,0 +1,25 @@
+{
+ "id": "columbia",
+ "name": "Columbia",
+ "crs": "EPSG:26910",
+ "res_m": 1.0,
+ "bounds": [
+  726584.0,
+  4211775.0,
+  729584.0,
+  4214175.0
+ ],
+ "elev_m": [
+  623.7661743164062,
+  778.858642578125
+ ],
+ "naip_year": 2022,
+ "lidar": "CA_SierraNevada_12_B22 + CA_CalaverasTuolumne_2011",
+ "water": [
+  {
+   "lat": 38.03103,
+   "lon": -120.38923,
+   "area_m2": 13474
+  }
+ ]
+}
