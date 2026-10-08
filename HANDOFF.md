@@ -169,6 +169,17 @@ Dispatch from the sandbox:
 - **December:** when ASO publishes the stage-by-stage route, update
   `route.py` (flyover) and `dakar.json` (page), re-render, post before Jan 1.
 
+### LiDAR Explore (Oct 8)
+- New project page `bdgroves/lidar-explore/docs` (3D point cloud, density slider,
+  stand map, WA explorer). Needs GitHub Pages on: Settings > Pages > main, /docs.
+- `rebuild.yml` reruns the whole pipeline from the open data on Actions; logs on
+  the `rebuild-results` branch; page data committed to `docs/data`.
+- The Forest Centre moved its downloads and changed its stand data model;
+  `stand_validate.py` reads both. Corrections published (README, blog update
+  box): cutting proposals are simulated; fresh inventory is laser-interpreted;
+  a sparse CHM is 13% empty, not "more empty than filled".
+- Open: filter validation on coverage (119 stands <90%); find field-measured plots.
+
 ### Bigger ideas Brooks raised
 10. **Nevada / UNR:** Nevada Bureau of Mines and Geology open data
     (https://data-nbmg.opendata.arcgis.com/) — the Comstock, Peavine, or the
