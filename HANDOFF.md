@@ -1,7 +1,37 @@
-# HANDOFF — mother-lode and the brooksgroves.com session of Oct 6, 2026
+# HANDOFF — mother-lode and the brooksgroves.com sessions of Oct 6–8, 2026
 
 Start here in a new chat. Read this file, then `README.md`. Do a fresh
 `git pull` in every repo before touching it (bots and cloud sessions push often).
+
+## Where we left off (Oct 8)
+
+- **LiDAR Explore is live** at https://brooksgroves.com/lidar-explore/ (Pages on,
+  `main` / `docs`), linked from the blog post and the Geospatial card. Brooks
+  added it to his LinkedIn Featured section. Details below.
+- **Dakar flyover:** stills approved; Brooks runs the full render on his laptop.
+  Next: when the film is done, put it on `dakar-2027.html` (web-sized MP4 plus
+  a poster frame). Paused until then. A scheduled task reminds us on
+  **Dec 1, 2026, 08:50 PT** to pick Dakar back up.
+- **Columbia flyover:** data built on Actions (`flyover-data` branch); Brooks
+  renders locally. Next: he renders stills, we review them, then the full film.
+- **Google Doc** in Brooks's Drive: "Rendering forge3d flyovers on a Windows
+  laptop with Smart App Control" (Roboto). Notes for us and for others with the
+  same setup; update it when the workflow changes.
+
+## Rendering forge3d on Brooks's laptop (quick reference)
+
+- Smart App Control blocks new unsigned DLLs, so a fresh pixi env fails. The
+  `f3d` function in his PowerShell profile borrows the trusted humphreys-orbit
+  env (forge3d 1.39). **Never** `pixi install/update/add` in humphreys-orbit.
+- New window that doesn't know `f3d`? Run `. $PROFILE`.
+- Quote comma lists: `--stills "13,28,84"` (otherwise PowerShell splits them).
+- Don't minimize the viewer window: the render stalls ("Timed out waiting for
+  snapshot output"). For long renders use the resumable loop:
+  `do { f3d scripts\render.py --frames-dir out\frames --lite } until ($LASTEXITCODE -eq 0)`
+  then `f3d scripts\render.py --encode out\frames`.
+- Anything needing PDAL/rasterio runs on Actions and publishes to a branch;
+  Brooks fetches it with `git fetch` + `git archive` + `tar`. The sandbox can't
+  download Actions artifacts or logs, so results go to branches.
 
 ## What exists now
 
@@ -100,8 +130,9 @@ Dispatch from the sandbox:
    Springfield and Shaws Flat near Columbia, Moccasin, and Groveland itself.
    Add to `places.yaml` with checked coordinates, build, fact-check the
    stories, run `web_data.py`, regenerate blog figures if used.
-3. **forge3d flyover** of Columbia's pinnacles or along Table Mountain (Kiva's
-   renderer already works on this pipeline; tag @milos_gis only for forge3d).
+3. **forge3d flyover** of Columbia: built Oct 7 (`flyover/`, see its README).
+   Waiting on Brooks's stills for review. Table Mountain could be next
+   (`FLY_PLACE`, its own `KEYS`). Tag @milos_gis only for forge3d.
 4. **Iron staining from space** (ties to Brooks's 1990s mineral-bioprocessing
    work): Sentinel-2 iron-oxide index over old mines and tailings.
 5. ~~Big Oak Flat's date~~ settled: Brooks confirms **1848**, which the map
@@ -170,15 +201,23 @@ Dispatch from the sandbox:
   `route.py` (flyover) and `dakar.json` (page), re-render, post before Jan 1.
 
 ### LiDAR Explore (Oct 8)
-- New project page `bdgroves/lidar-explore/docs` (3D point cloud, density slider,
-  stand map, WA explorer). Needs GitHub Pages on: Settings > Pages > main, /docs.
+- Live: https://brooksgroves.com/lidar-explore/ (`docs/index.html` + `app.js`:
+  three.js point cloud, density slider, resolution and change charts, Leaflet
+  stand map with CHM overlay, 547-square negative-result grid, machine table,
+  WA slider). Verified live; blog post `finding-the-trees.html` has the link
+  and an "Update, October 8, 2026" box; Geospatial page has the card.
+- Rebuild matches the original: 1,840 stands, 1,489 validated, stem recovery
+  16.2%, detected-top height r 0.959, eligible pool 545 of 547. WA snapshot
+  AUC 0.879 (`wa.json` reads the committed snapshot, not a fresh pull).
 - `rebuild.yml` reruns the whole pipeline from the open data on Actions; logs on
   the `rebuild-results` branch; page data committed to `docs/data`.
 - The Forest Centre moved its downloads and changed its stand data model;
   `stand_validate.py` reads both. Corrections published (README, blog update
   box): cutting proposals are simulated; fresh inventory is laser-interpreted;
   a sparse CHM is 13% empty, not "more empty than filled".
-- Open: filter validation on coverage (119 stands <90%); find field-measured plots.
+- Open: filter validation on coverage (119 stands <90%; dropping them moves
+  recovery 16.2% → 16.7%); find field-measured plots (only 1 of 1,489
+  inventories on sheet L4132D is field-measured).
 
 ### Bigger ideas Brooks raised
 10. **Nevada / UNR:** Nevada Bureau of Mines and Geology open data
