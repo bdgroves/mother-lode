@@ -12,10 +12,11 @@ Start here in a new chat. Read this file, then `README.md`. Do a fresh
   Next: when the film is done, put it on `dakar-2027.html` (web-sized MP4 plus
   a poster frame). Paused until then. A scheduled task reminds us on
   **Dec 1, 2026, 08:50 PT** to pick Dakar back up.
-- **Columbia flyover:** data built on Actions (`flyover-data` branch); Brooks
-  renders locally. Next: he renders stills, we review them, then the full film.
-- **Parking lot (Brooks, Oct 8):** both flyovers are parked. Don't raise them
-  until he does: Columbia stills review, and the Dakar film on the page.
+- **Columbia flyover: done.** Rendered locally and added to the Mother Lode
+  post on Oct 8 (another session, commit f224635 in bdgroves.github.io):
+  `blog/img/mother-lode/columbia-flyover.mp4`, a 1080p copy and a poster.
+- **Parking lot (Brooks, Oct 8):** the Dakar film for the page is parked.
+  Don't raise it until he does.
 - **Google Doc** in Brooks's Drive: "Rendering forge3d flyovers on a Windows
   laptop with Smart App Control" (Roboto). Notes for us and for others with the
   same setup; update it when the workflow changes.
@@ -132,8 +133,8 @@ Dispatch from the sandbox:
    Springfield and Shaws Flat near Columbia, Moccasin, and Groveland itself.
    Add to `places.yaml` with checked coordinates, build, fact-check the
    stories, run `web_data.py`, regenerate blog figures if used.
-3. **forge3d flyover** of Columbia: built Oct 7 (`flyover/`, see its README).
-   Waiting on Brooks's stills for review. Table Mountain could be next
+3. **forge3d flyover** of Columbia: done and on the post (Oct 8). Table
+   Mountain could be next
    (`FLY_PLACE`, its own `KEYS`). Tag @milos_gis only for forge3d.
 4. **Iron staining from space** (ties to Brooks's 1990s mineral-bioprocessing
    work): Sentinel-2 iron-oxide index over old mines and tailings.
