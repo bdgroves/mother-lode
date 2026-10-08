@@ -168,6 +168,10 @@ Dispatch from the sandbox:
   that had none (blog posts, ology hubs, games, learning, sport trackers).
   Only 404, construction, fuelcast (noindex) and Google's file lack one now.
   Not done yet: the ~26 project front pages in their own repos.
+  Site icon for Google: homepage now links real files (/favicon.ico,
+  /favicon-96.png, /favicon-192.png, /apple-touch-icon.png, the tree from Noto
+  Color Emoji). Google ignores emoji data: URIs. Google shows one icon per
+  host, so HopLove (/hoplove/) gets the tree in search, not its hop mark.
   Also fixed (Brooks confirmed): hydrology lists ten gauges; Adjuster's Report
   has seven facts (endings now use the real count); Pocket Fire = Coconino NF.
 - **Late October:** re-export Performance (3 months) and compare. If hop
