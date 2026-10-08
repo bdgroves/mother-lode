@@ -14,6 +14,8 @@ Start here in a new chat. Read this file, then `README.md`. Do a fresh
   **Dec 1, 2026, 08:50 PT** to pick Dakar back up.
 - **Columbia flyover:** data built on Actions (`flyover-data` branch); Brooks
   renders locally. Next: he renders stills, we review them, then the full film.
+- **Parking lot (Brooks, Oct 8):** both flyovers are parked. Don't raise them
+  until he does: Columbia stills review, and the Dakar film on the page.
 - **Google Doc** in Brooks's Drive: "Rendering forge3d flyovers on a Windows
   laptop with Smart App Control" (Roboto). Notes for us and for others with the
   same setup; update it when the workflow changes.
