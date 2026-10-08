@@ -168,11 +168,8 @@ Dispatch from the sandbox:
   that had none (blog posts, ology hubs, games, learning, sport trackers).
   Only 404, construction, fuelcast (noindex) and Google's file lack one now.
   Not done yet: the ~26 project front pages in their own repos.
-  Found while checking (not fixed, ask Brooks): hydrology.html says eleven
-  gauges but lists ten; Adjuster's Report evidence count differs (7 in game,
-  "five of six" ending, 6 on games.html, "Five Facts" heading over 7 items);
-  BdgrovesBot post puts the Pocket Fire in Yavapai County, the Pocket Fire post
-  says Coconino NF.
+  Also fixed (Brooks confirmed): hydrology lists ten gauges; Adjuster's Report
+  has seven facts (endings now use the real count); Pocket Fire = Coconino NF.
 - **Late October:** re-export Performance (3 months) and compare. If hop
   pages get clicks, do the same for HopLove beer pages and the blog.
 - The 404 list (old /hoplore/, recipe worker actions, old journal path, an
