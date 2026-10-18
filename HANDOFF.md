@@ -21,6 +21,24 @@ Start here in a new chat. Read this file, then `README.md`. Do a fresh
   laptop with Smart App Control" (Roboto). Notes for us and for others with the
   same setup; update it when the workflow changes.
 
+## Oct 18: memoir and the Iron Door napkins
+
+- The Iron Door Saloon (Chris Loh) had cocktail napkins printed for Brooks. A
+  thank-you reply is drafted in Gmail (thread "A strange small favor"); Brooks
+  attaches the story PDF and sends. His first email linked the gated memoir
+  page, so Chris gets a PDF instead.
+- Napkin map = #30DayMapChallenge Nov 30 (pen-and-paper day): hand-drawn on
+  an Iron Door napkin next to a GIS map of the same springs (Travertine and
+  Buckeye by Bridgeport; the big one past Mammoth, beyond Wild Willy's, the
+  Big Springs gate). Send the result to Chris.
+- `brooks-memoir/cattle-guard.html` rewritten with Brooks: Travertine scene
+  (geology, hippie plumbing, Zack and Brooks as engineers), the third-cattle-
+  guard overshoot and the gate, Area 51 hint, tighter ending. Empty
+  `.disclaimer` boxes removed from 22 pages; literal *asterisks* fixed.
+- Iron Door Irregulars order: Hippie Bro, Cattle Guard, Long Way Around,
+  Frank's Keys, Daff Dome (last; no Next). Windowpane and Rainbow Pools are a
+  separate set (Brooks's high school years), not part of the series.
+
 ## Rendering forge3d on Brooks's laptop (quick reference)
 
 - Smart App Control blocks new unsigned DLLs, so a fresh pixi env fails. The
