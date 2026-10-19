@@ -29,8 +29,8 @@ Start here in a new chat. Read this file, then `README.md`. Do a fresh
   page, so Chris gets a PDF instead.
 - Napkin map = #30DayMapChallenge Nov 30 (pen-and-paper day): hand-drawn on
   an Iron Door napkin next to a GIS map of the same springs (Travertine and
-  Buckeye by Bridgeport; the big one past Mammoth, beyond Wild Willy's, the
-  Big Springs gate). Send the result to Chris.
+  Buckeye by Bridgeport; the gated ranch spring ~38.225, -119.216 south of
+  Bridgeport; the big one in Long Valley past Mammoth, beyond Wild Willy's). Send the result to Chris.
 - `brooks-memoir/cattle-guard.html` rewritten with Brooks: Travertine scene
   (geology, hippie plumbing, Zack and Brooks as engineers), the third-cattle-
   guard overshoot and the gate, Area 51 hint, tighter ending. Empty
